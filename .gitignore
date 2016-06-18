@@ -7,3 +7,4 @@ packages
 /FinaleProject/FinaleProject/bower_components/**/*.*
 /FinaleProject/FinaleProject/node_modules/**/*.*
 /FinaleProject/FinaleProject/**/obj/**/*.*
+/FinaleProject/FinaleProject/node_modules/**/*

@@ -1,9 +1,11 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
-        <title></title>
-    </head>
-    <body>
-
-    </body>
-</html>
+﻿@if (IsPost)
+{
+    if (User.Identity.IsAuthenticated)
+    {
+        Response.Write(HttpStatusCode.OK);
+    }
+    else
+    {
+        Response.Write(HttpStatusCode.Unauthorized);
+    }
+}
