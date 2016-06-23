@@ -15,7 +15,9 @@
       })
     .state('login', {
         url: "/login",
-        templateUrl: "LogIn.html"
+        templateUrl: "LogIn.html",
+        controller: "LoginCtrl",
+        controllerAs: "login",
     })
         .state('photos', {
             url: "/photos",

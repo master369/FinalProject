@@ -1,0 +1,11 @@
+C:\Users\Master\Documents\FinalProject\FinaleProject\DAL.DataBase\obj\Debug\DAL.DataBase.csprojResolveAssemblyReference.cache
+C:\Users\Master\Documents\FinalProject\FinaleProject\DAL.DataBase\bin\Debug\DAL.DataBase.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\DAL.DataBase\bin\Debug\DAL.DataBase.pdb
+C:\Users\Master\Documents\FinalProject\FinaleProject\DAL.DataBase\bin\Debug\Common.Entities.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\DAL.DataBase\bin\Debug\DAL.Interfaces.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\DAL.DataBase\bin\Debug\log4net.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\DAL.DataBase\bin\Debug\Common.Entities.pdb
+C:\Users\Master\Documents\FinalProject\FinaleProject\DAL.DataBase\bin\Debug\DAL.Interfaces.pdb
+C:\Users\Master\Documents\FinalProject\FinaleProject\DAL.DataBase\bin\Debug\log4net.xml
+C:\Users\Master\Documents\FinalProject\FinaleProject\DAL.DataBase\obj\Debug\DAL.DataBase.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\DAL.DataBase\obj\Debug\DAL.DataBase.pdb

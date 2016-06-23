@@ -10,30 +10,28 @@ namespace FinaleProject.Models
     {
         public override string[] GetAllRoles()
         {
-            return new[] { "Admin",  "Moderator","User", };
+            return new[] { "Admin", "Moderator", "User" };
         }
 
         public override string[] GetRolesForUser(string username)
         {
+            var roles = new List<string>();
+            if (AccountModel.Get(username).Roles.Contains("Admin"))
             {
-                var roles = new List<string>();
-                if (username == "Admin")
-                {
-                    roles.Add("Admin");
-                }
-
-                if (username == "Admin")
-                {
-                    roles.Add("User");
-                }
-
-                if (username == "Admin")
-                {
-                    roles.Add("Moderator");
-                }
-
-                return roles.ToArray();
+                roles.Add("Admin");
             }
+
+            if (AccountModel.Get(username).Roles.Contains("User"))
+            {
+                roles.Add("User");
+            }
+
+            if (AccountModel.Get(username).Roles.Contains("Moderator"))
+            {
+                roles.Add("Moderator");
+            }
+
+            return roles.ToArray();
         }
 
         public override string ApplicationName

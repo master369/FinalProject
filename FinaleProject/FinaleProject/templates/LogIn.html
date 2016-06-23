@@ -1,1 +1,14 @@
-﻿
+﻿<div layout="column" layout-padding ng-cloak>
+    <md-content class="md-no-momentum">
+        <md-input-container class="md-icon-float md-block">
+            <label>Name</label>
+            <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon>
+            <input ng-model="login.user.name" type="text">
+        </md-input-container>
+        <md-input-container class="md-block">
+            <md-icon md-svg-src="styles/icons/ic_email_24px.svg" class="email"></md-icon>
+            <input ng-model="login.user.password" type="password" placeholder="Password" ng-required="true">
+        </md-input-container>
+        <md-button class="md-raised md-primary">Submit</md-button>
+    </md-content>
+</div>

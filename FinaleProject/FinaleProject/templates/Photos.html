@@ -1,10 +1,16 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-	<meta charset="utf-8" />
-</head>
-<body>
+﻿<h1>Photos:</h1>
 
-</body>
-</html>
+<div class="container">
+    <div class="photo-container" ng-repeat="item in [1,2,3,4]">
+        <img src="Views/1.jpg">
+        <div class="photo-controls">
+            <md-button class="md-icon-button md-accent" aria-label="Favorite">
+                <md-icon md-svg-icon="styles/icons/favorite.svg"></md-icon>
+            </md-button>
+            <md-button class="md-icon-button launch">
+                <md-icon md-svg-icon="styles/icons/search.svg"></md-icon>
+            </md-button>
+        </div>
+    </div>
+</div>
+

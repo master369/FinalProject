@@ -1,0 +1,9 @@
+C:\Users\Master\Documents\FinalProject\FinaleProject\BLL.Interfaces\obj\Debug\BLL.Interfaces.csprojResolveAssemblyReference.cache
+C:\Users\Master\Documents\FinalProject\FinaleProject\BLL.Interfaces\bin\Debug\BLL.Interfaces.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\BLL.Interfaces\bin\Debug\BLL.Interfaces.pdb
+C:\Users\Master\Documents\FinalProject\FinaleProject\BLL.Interfaces\bin\Debug\Common.Entities.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\BLL.Interfaces\bin\Debug\log4net.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\BLL.Interfaces\bin\Debug\Common.Entities.pdb
+C:\Users\Master\Documents\FinalProject\FinaleProject\BLL.Interfaces\bin\Debug\log4net.xml
+C:\Users\Master\Documents\FinalProject\FinaleProject\BLL.Interfaces\obj\Debug\BLL.Interfaces.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\BLL.Interfaces\obj\Debug\BLL.Interfaces.pdb

@@ -1,0 +1,15 @@
+C:\Users\Master\Documents\FinalProject\FinaleProject\BLL.Core\bin\Debug\BLL.Core.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\BLL.Core\bin\Debug\BLL.Core.pdb
+C:\Users\Master\Documents\FinalProject\FinaleProject\BLL.Core\bin\Debug\BLL.Interfaces.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\BLL.Core\bin\Debug\Common.Entities.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\BLL.Core\bin\Debug\DAL.DataBase.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\BLL.Core\bin\Debug\DAL.Interfaces.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\BLL.Core\bin\Debug\log4net.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\BLL.Core\bin\Debug\BLL.Interfaces.pdb
+C:\Users\Master\Documents\FinalProject\FinaleProject\BLL.Core\bin\Debug\Common.Entities.pdb
+C:\Users\Master\Documents\FinalProject\FinaleProject\BLL.Core\bin\Debug\DAL.DataBase.pdb
+C:\Users\Master\Documents\FinalProject\FinaleProject\BLL.Core\bin\Debug\DAL.Interfaces.pdb
+C:\Users\Master\Documents\FinalProject\FinaleProject\BLL.Core\bin\Debug\log4net.xml
+C:\Users\Master\Documents\FinalProject\FinaleProject\BLL.Core\obj\Debug\BLL.Core.csprojResolveAssemblyReference.cache
+C:\Users\Master\Documents\FinalProject\FinaleProject\BLL.Core\obj\Debug\BLL.Core.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\BLL.Core\obj\Debug\BLL.Core.pdb

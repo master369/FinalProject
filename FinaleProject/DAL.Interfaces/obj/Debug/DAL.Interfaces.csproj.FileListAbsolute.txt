@@ -1,0 +1,7 @@
+C:\Users\Master\Documents\FinalProject\FinaleProject\DAL.Interfaces\bin\Debug\DAL.Interfaces.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\DAL.Interfaces\bin\Debug\DAL.Interfaces.pdb
+C:\Users\Master\Documents\FinalProject\FinaleProject\DAL.Interfaces\bin\Debug\Common.Entities.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\DAL.Interfaces\bin\Debug\Common.Entities.pdb
+C:\Users\Master\Documents\FinalProject\FinaleProject\DAL.Interfaces\obj\Debug\DAL.Interfaces.csprojResolveAssemblyReference.cache
+C:\Users\Master\Documents\FinalProject\FinaleProject\DAL.Interfaces\obj\Debug\DAL.Interfaces.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\DAL.Interfaces\obj\Debug\DAL.Interfaces.pdb

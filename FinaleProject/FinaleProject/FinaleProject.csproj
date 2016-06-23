@@ -990,7 +990,9 @@
     <Content Include="bower_components\jquery\README.md" />
     <Content Include="bower_components\jquery\src\.jshintrc" />
     <Content Include="scripts\app\controllers\albums.ctrl.js" />
+    <Content Include="scripts\app\controllers\login.ctrl.js" />
     <Content Include="scripts\app\controllers\main.ctrl.js" />
+    <Content Include="styles\allStyles.css" />
     <Content Include="templates\Albums.html" />
     <Content Include="templates\LogIn.html" />
     <Content Include="templates\Photos.html" />
@@ -1101,6 +1103,11 @@
     <Content Include="bower_components\angular-messages\LICENSE.md" />
     <Content Include="bower_components\angular-messages\package.json" />
     <Content Include="bower_components\angular-messages\README.md" />
+    <Content Include="styles\home.scss" />
+    <Content Include="styles\icons\favorite.svg" />
+    <Content Include="styles\icons\favorite_border.svg" />
+    <Content Include="styles\icons\search.svg" />
+    <Content Include="styles\photos.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1120,14 +1127,29 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\AccountModel.cs" />
+    <Compile Include="Models\Logic.cs" />
     <Compile Include="Models\MyRoleProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="scripts\app\directives\" />
-    <Folder Include="styles\" />
     <Folder Include="Views\Comment\" />
     <Folder Include="Views\Error\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL.Core\BLL.Core.csproj">
+      <Project>{4e5e6f5f-5d47-41f6-ab46-49978d0d7875}</Project>
+      <Name>BLL.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BLL.Interfaces\BLL.Interfaces.csproj">
+      <Project>{b433d666-dca9-4984-9218-732be7e37c89}</Project>
+      <Name>BLL.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common.Entities\Common.Entities.csproj">
+      <Project>{8d6bf78c-25b2-45e6-9e55-6f950b365379}</Project>
+      <Name>Common.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
