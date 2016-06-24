@@ -4,16 +4,8 @@
     var username = User.Identity.Name;
     if (User.Identity.IsAuthenticated)
     {
-        //var acc = new AccountModel()
-        //{
-        //    Name = username,
-        //    Roles = AccountModel.Get(username).Roles
-        //};
-
-        //TextWriter tw = "";
-        //Json.Write(acc, tw);
-        //Response.Write(tw);
-        Response.Write(HttpStatusCode.OK);
+        var data = new { Name = username, Roles = AccountModel.Get(username).Roles };
+        Response.Write(Json.Encode(data));
 
     }
     else

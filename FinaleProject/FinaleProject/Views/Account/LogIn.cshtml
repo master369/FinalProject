@@ -8,7 +8,8 @@
     if (AccountModel.CanLogin(Login, Password))
     {
         FormsAuthentication.SetAuthCookie(Login, createPersistentCookie: true);
-        Response.Write(HttpStatusCode.OK);
+        var data = new { Name = Login, Roles = AccountModel.Get(Login).Roles };
+        Response.Write(Json.Encode(data));
     }
     else
     {

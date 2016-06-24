@@ -21,13 +21,13 @@ namespace FinaleProject.Models
         public string Name { get; set; }
         public string Password { get; set; }
         public List<string> Roles { get; set; }
-        //public int Rating
-        //{
-        //    get
-        //    {
-        //        return Logic.accountsLogic.RatingByAccount(Name);
-        //    }
-        //}
+        public int Rating
+        {
+            get
+            {
+                return Logic.accountsLogic.RatingByAccount(Name);
+            }
+        }
 
         public HttpPostedFileBase Image { get; set; }
 
@@ -42,10 +42,15 @@ namespace FinaleProject.Models
 
         public static bool Add(AccountModel model)
         {
+            string password = model.Password;
+            using (MD5 md5Hash = MD5.Create())
+            {
+                password = GetMd5Hash(md5Hash, password);
+            }
             var ent = new Account
             {
                 Name = model.Name,
-                Password = model.Password,
+                Password = password,
                 Roles = new List<string> { "User" },
             };
             return Logic.accountsLogic.Add(ent);

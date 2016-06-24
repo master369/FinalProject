@@ -992,6 +992,7 @@
     <Content Include="scripts\app\controllers\albums.ctrl.js" />
     <Content Include="scripts\app\controllers\login.ctrl.js" />
     <Content Include="scripts\app\controllers\main.ctrl.js" />
+    <Content Include="scripts\app\controllers\signup.ctrl.js" />
     <Content Include="styles\allStyles.css" />
     <Content Include="templates\Albums.html" />
     <Content Include="templates\LogIn.html" />
@@ -1129,8 +1130,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\AccountModel.cs" />
+    <Compile Include="Models\AlbumModel.cs" />
+    <Compile Include="Models\CommentModel.cs" />
     <Compile Include="Models\Logic.cs" />
     <Compile Include="Models\MyRoleProvider.cs" />
+    <Compile Include="Models\PhotoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

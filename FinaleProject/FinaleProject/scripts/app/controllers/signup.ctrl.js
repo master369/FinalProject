@@ -1,14 +1,14 @@
-﻿App.controller('LoginCtrl', function ($http, $scope, $httpParamSerializerJQLike, $state) {
+﻿App.controller('SignupCtrl', function ($http, $scope, $httpParamSerializerJQLike, $state) {
     var vm = this,
         user;
     user = vm.user = {
         name: '',
         password: '',
-    };
-    vm.login = function () {
+    };  
+    vm.signup = function () {
         $http({
             method: 'POST',
-            url: 'Views/Account/LogIn.cshtml',
+            url: 'Views/Account/SignUp.cshtml',
             data: {
                 Login: user.name,
                 Password: user.password

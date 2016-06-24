@@ -16,5 +16,7 @@ namespace BLL.Interfaces
         Album GetAlbum(int albumId);
 
         void DeleteAlbum(int id);
+        IEnumerable<Album> GetAllForUser(string login);
+
     }
 }

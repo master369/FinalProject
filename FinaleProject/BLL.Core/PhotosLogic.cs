@@ -43,6 +43,11 @@ namespace BLL.Core
             return photosDAO.GetPhoto(id);
         }
 
+        public IEnumerable<Photo> GetPhotosByAlbum(int albumId)
+        {
+            return photosDAO.GetAllPhotos().Where(x => x.AlbumId == albumId);
+        }
+
         public bool LikePhoto(int photoId, string login)
         {
             return photosDAO.LikePhoto(photoId, login);

@@ -1,4 +1,24 @@
-﻿App.config(function ($stateProvider, $urlRouterProvider) {
+﻿App.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
+    $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+    //$httpProvider.defaults.paramSerializer = '$httpParamSerializerJQLike';
+    $httpProvider.interceptors.push(function ($q) {
+        return {
+            'responseError': function (response) {
+                if (response.status === 401) {
+                    //Auth.logOut();//todo fix
+                }
+                return $q.reject(response);
+            },
+            'request': function (config) {
+                if (_.isObject(config.data)) config.data = $.param(config.data);
+                return config;
+            },
+
+        };
+    });
+
+
+
     $urlRouterProvider.otherwise("/home");
     $stateProvider
       .state('home', {
@@ -29,7 +49,9 @@
         })
         .state('signup', {
             url: "/signup",
-            templateUrl: "SignUp.html"
+            templateUrl: "SignUp.html",
+            controller: "SignupCtrl",
+            controllerAs: "signup",
         })
         .state('users', {
             url: "/users",

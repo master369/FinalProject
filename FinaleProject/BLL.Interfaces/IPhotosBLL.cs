@@ -18,7 +18,7 @@ namespace BLL.Interfaces
         bool LikePhoto(int photoId, string login);
 
         IEnumerable<Photo> GetAllPhotosByAccount(string login);
-
+        IEnumerable<Photo> GetPhotosByAlbum(int albumId);
         void DeletePhoto(int id);
     }
 }

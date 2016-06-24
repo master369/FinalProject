@@ -7,7 +7,7 @@
     vm.logout = function () {
         $http.post('Views/Account/Logout.cshtml')
             .then(function (res) {
-                vm.user.isAuthorized = false;
+                angular.copy({ isAuthorized: false }, vm.user);
             });
     };
 
@@ -16,9 +16,14 @@
     function init() {
         $http.post('Views/Account/isAuthorized.cshtml')
             .then(function (res) {
-                vm.user.isAuthorized = true;
+                var data = res.data;
+                angular.copy({
+                    isAuthorized: true,
+                    name: data.Name,
+                    roles: data.Roles
+                }, vm.user);
             }, function () {
-                vm.user.isAuthorized = false;
+                angular.copy({ isAuthorized: false }, vm.user);
             });
     }
 });

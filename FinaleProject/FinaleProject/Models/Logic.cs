@@ -9,7 +9,7 @@ namespace FinaleProject.Models
 {
     public static class Logic
     {
-        public static IAlbumsBLL awardsLogic = new AlbumsLogic();
+        public static IAlbumsBLL albumsLogic = new AlbumsLogic();
         public static IAccountsBLL accountsLogic = new AccountsLogic();
         public static ICommentsBLL commentsLogic = new CommentsLogic();
         public static IPhotosBLL photosLogic = new PhotosLogic();

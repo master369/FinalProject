@@ -98,5 +98,19 @@ namespace BLL.Core
         {
             return accountDAO.GetAll();
         }
+
+        public int RatingByAccount(string login)
+        {
+            int rating = 0;
+
+            List<Photo> photosContainer = DAOContainer.PhotosDAO.GetAllPhotosByAccount(login).ToList();
+
+            foreach (var item in photosContainer)
+            {
+                rating += item.LikesContainer.Count();
+            }
+
+            return rating;
+        }
     }
 }

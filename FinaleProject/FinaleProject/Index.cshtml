@@ -23,18 +23,18 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a >Link <span class="sr-only">(current)</span></a></li>
-                    <li><a >Link</a></li>
+                    <li class="active"><a>Link <span class="sr-only">(current)</span></a></li>
+                    <li><a>Link</a></li>
                     <li class="dropdown">
-                        <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a >Action</a></li>
-                            <li><a >Another action</a></li>
-                            <li><a >Something else here</a></li>
+                            <li><a>Action</a></li>
+                            <li><a>Another action</a></li>
+                            <li><a>Something else here</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a >Separated link</a></li>
+                            <li><a>Separated link</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a >One more separated link</a></li>
+                            <li><a>One more separated link</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -44,7 +44,12 @@
                     </div>
                     <button type="submit" class="btn btn-default" ui-sref="search">search</button>
                 </form>
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right" ng-cloak>
+                    <li ng-show="main.user.isAuthorized">
+                        <a>
+                            {{main.user.name}}
+                        </a>
+                    </li>
                     <li ng-show="!main.user.isAuthorized"><a ui-sref="login">Login</a></li>
                     <li ng-show="main.user.isAuthorized"><a ng-click="main.logout()">Logout</a></li>
                     <li ng-show="!main.user.isAuthorized"><a ui-sref="signup">Signup</a></li>
@@ -53,11 +58,6 @@
         </div>
     </nav>
     <div class="container">
-        <div>
-            <a class="btn btn-primary" ui-sref="home">Home</a>
-            <a class="btn btn-danger" ui-sref="albums">albums</a>
-            <a class="btn btn-danger" ui-sref="page1">Page1</a>
-        </div>
 
         <div ui-view>
 
@@ -79,5 +79,6 @@
     <script src="~/scripts/app/controllers/albums.ctrl.js"></script>
     <script src="~/scripts/app/controllers/home.ctrl.js"></script>
     <script src="~/scripts/app/controllers/login.ctrl.js"></script>
+    <script src="~/scripts/app/controllers/signup.ctrl.js"></script>
 </body>
 </html>

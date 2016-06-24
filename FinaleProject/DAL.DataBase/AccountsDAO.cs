@@ -62,6 +62,7 @@ namespace DAL.DataBase
                     commandInsert.Parameters.AddWithValue("@Password", user.Password);
                     connection.Open();
                     var result = commandInsert.ExecuteNonQuery();
+                    AddRole(user.Name, "User");
                     return true;
 
                 }
@@ -95,14 +96,14 @@ namespace DAL.DataBase
                     //ПРОВЕРКА ЕСЛИ ЛИ У ЭТОГО ПОЛЬЗОВАТЕЛЯ ТАКАЯ РОЛЬ В БД
                     #region Find_Role_For_User
 
-                    var commandSelect = new SqlCommand("SELECT [AccountLogin], [RoleId] FROM dbo.[AccountsWithRoles] WHERE [AccountLogin] = @Login", connection);
+                    var commandSelect = new SqlCommand("SELECT [AccountLogin], [Role_Id] FROM dbo.[AccountsWithRoles] WHERE [AccountLogin] = @Login", connection);
                     commandSelect.Parameters.AddWithValue("@Login", name);
                     connection.Open();
                     var reader = commandSelect.ExecuteReader();
                     var roles = new List<int>();//контейнер для ролей у пользователя из БД
                     while (reader.Read())
                     {
-                        roles.Add((int)reader["RoleId"]);
+                        roles.Add((int)reader["Role_Id"]);
                     }
                     if (roles.Contains(_roleContainer.FirstOrDefault(x => x.Value == role).Key))
                         return false;//если такая роль уже есть у пользователя
@@ -113,7 +114,7 @@ namespace DAL.DataBase
                     //ДОБАВЛЕНИЕ РОЛИ ПОЛЬЗОВАТЕЛЮ
                     #region Add_Role
 
-                    var commandInsert = new SqlCommand("INSERT INTO dbo.[AccountsWithRoles] ([AccountLogin], [RoleId]) VALUES (@Login, @Role) ", connection);
+                    var commandInsert = new SqlCommand("INSERT INTO dbo.[AccountsWithRoles] ([AccountLogin], [Role_Id]) VALUES (@Login, @Role) ", connection);
                     commandInsert.Parameters.AddWithValue("@Login", name);
                     commandInsert.Parameters.AddWithValue("@Role", _roleContainer.FirstOrDefault(x => x.Value == role).Key);
                     connection.Open();

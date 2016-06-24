@@ -15,5 +15,6 @@ namespace BLL.Interfaces
         Account Get(string name);
         IEnumerable<Account> GetAll();
         bool EditPassword(string Login, string OldPassword, string NewPassword);
+        int RatingByAccount(string login);
     }
 }
