@@ -7,7 +7,7 @@ using System.Web;
 
 namespace FinaleProject.Models
 {
-    public class Logic
+    public static class Logic
     {
         public static IAlbumsBLL awardsLogic = new AlbumsLogic();
         public static IAccountsBLL accountsLogic = new AccountsLogic();

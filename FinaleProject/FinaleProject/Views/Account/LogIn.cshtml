@@ -1,9 +1,19 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
-        <title></title>
-    </head>
-    <body>
+﻿@using FinaleProject.Models;
 
-    </body>
-</html>
+@if (IsPost)
+{
+    string Login = Request["Login"];
+    string Password = Request["Password"];
+
+    if (AccountModel.CanLogin(Login, Password))
+    {
+        FormsAuthentication.SetAuthCookie(Login, createPersistentCookie: true);
+        Response.Write(HttpStatusCode.OK);
+    }
+    else
+    {
+        Response.SetStatus(HttpStatusCode.BadRequest);
+    }
+
+
+}

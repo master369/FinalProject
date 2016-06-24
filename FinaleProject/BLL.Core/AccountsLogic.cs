@@ -35,7 +35,7 @@ namespace BLL.Core
             return sBuilder.ToString();
         }
 
-        public void AccountLogic()
+        public AccountsLogic()
         {
             accountDAO = DAOContainer.AccountDAO;
             accounts = accountDAO.GetAll().ToList();

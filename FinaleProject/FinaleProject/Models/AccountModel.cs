@@ -17,7 +17,7 @@ namespace FinaleProject.Models
         {
 
         }
-        
+
         public string Name { get; set; }
         public string Password { get; set; }
         public List<string> Roles { get; set; }
@@ -73,7 +73,10 @@ namespace FinaleProject.Models
         public static AccountModel Get(string name)
         {
             if (name == "") return null;
-            var ent = Logic.accountsLogic.Get(name);
+            Account ent;
+
+            ent = Logic.accountsLogic.Get(name);
+
 
             if (ent == null) return null;
 

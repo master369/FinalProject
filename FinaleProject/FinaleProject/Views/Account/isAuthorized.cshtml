@@ -1,0 +1,23 @@
+﻿@using FinaleProject.Models;
+@if (IsPost)
+{
+    var username = User.Identity.Name;
+    if (User.Identity.IsAuthenticated)
+    {
+        //var acc = new AccountModel()
+        //{
+        //    Name = username,
+        //    Roles = AccountModel.Get(username).Roles
+        //};
+
+        //TextWriter tw = "";
+        //Json.Write(acc, tw);
+        //Response.Write(tw);
+        Response.Write(HttpStatusCode.OK);
+
+    }
+    else
+    {
+        Response.SetStatus(HttpStatusCode.Unauthorized);
+    }
+}
