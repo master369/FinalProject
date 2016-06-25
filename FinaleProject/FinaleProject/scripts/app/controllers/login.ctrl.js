@@ -1,4 +1,4 @@
-﻿App.controller('LoginCtrl', function ($http, $scope, $httpParamSerializerJQLike, $state) {
+﻿App.controller('LoginCtrl', function ($http, $scope, $state) {
     var vm = this,
         user;
     user = vm.user = {

@@ -63,6 +63,8 @@
         })
         .state('users', {
             url: "/users",
-            templateUrl: "Users.html"
+            templateUrl: "Users.html",
+            controller: "UsersCtrl",
+            controllerAs: "users",
         });
 });

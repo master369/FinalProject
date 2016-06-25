@@ -217,14 +217,14 @@ namespace DAL.DataBase
                 {
                     using (var connection = new SqlConnection(_connectionString))//для каждому пользователю присваиваем роли из БД
                     {
-                        var command = new SqlCommand("SELECT [AccountLogin], [RoleId] FROM dbo.[AccountsWithRoles] WHERE [AccountLogin] = @Login", connection);
+                        var command = new SqlCommand("SELECT [AccountLogin], [Role_Id] FROM dbo.[AccountsWithRoles] WHERE [AccountLogin] = @Login", connection);
                         command.Parameters.AddWithValue("@Login", item.Name);
                         connection.Open();
                         var reader = command.ExecuteReader();
 
                         while (reader.Read())
                         {
-                            item.Roles.Add(_roleContainer[(int)reader["RoleId"]]);
+                            item.Roles.Add(_roleContainer[(int)reader["Role_Id"]]);
                         }
                     }
                 }

@@ -1,7 +1,7 @@
 estimations:
 1) error messages for login and sigup pages. (2h) +
 2) users page
-2.1) create server method which should return users list according to page number and page size.(2h)
+2.1) create server method which should return users list according to page number and page size.(2h)+
 2.2) create ui for users page
 2.2.1) create static markup (1h)
 2.2.2) create paging directive (1.5h)

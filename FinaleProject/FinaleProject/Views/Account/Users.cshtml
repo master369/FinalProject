@@ -1,11 +1,25 @@
-﻿@if (IsPost)
+﻿@using FinaleProject.Models;
+@using PagedList;
+@if (IsPost)
 {
-    if (User.Identity.IsAuthenticated)
+
+    int? pageNumber;
+    int? pageSize;
+    try
     {
-        Response.Write(HttpStatusCode.OK);
+        pageNumber = int.Parse(Request["pageNumber"]);
+        pageSize = int.Parse(Request["pageSize"]);
     }
-    else
+    catch (Exception)
     {
-        Response.Write(HttpStatusCode.Unauthorized);
+        pageNumber = null;
+        pageSize = null;
     }
+
+    pageNumber = pageNumber ?? 1;
+    pageSize = pageSize ?? 10;
+    var model = AccountModel.GetAll().OrderBy(x => x.Name);
+    var itemsPerPage = model.ToPagedList((int)pageNumber, (int)pageSize);
+    Response.Write(Json.Encode(itemsPerPage));
+
 }
