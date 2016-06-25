@@ -62,9 +62,19 @@
             controllerAs: "signup",
         })
         .state('users', {
-            url: "/users",
+            url: "/users?page&pageSize",
             templateUrl: "Users.html",
             controller: "UsersCtrl",
             controllerAs: "users",
+            params: {
+                page: {
+                    value: '1',
+                    squash: false
+                },
+                pageSize: {
+                    value: '10',
+                    squash: false
+                }
+            },
         });
 });

@@ -1,0 +1,18 @@
+﻿<ul class="pagination" ng-show="totalItems > itemsCount">
+    <li class="prev cursor-pointer"
+        ng-click="changePage(PREV)"
+        ng-class="{disable: currentPage===1}">
+        <a>&laquo;</a>
+    </li>
+    <li class="cursor-pointer"
+        ng-repeat="page in pages track by $index"
+        ng-click="changePage(page)"
+        ng-class="{active:page === currentPage, disable:page===SEPARATOR}">
+        <a ng-show="page">{{page}}</a>
+    </li>
+    <li class="next cursor-pointer"
+        ng-click="changePage(NEXT)"
+        ng-class="{disable: currentPage===totalPages}">
+        <a>&raquo;</a>
+    </li>
+</ul>

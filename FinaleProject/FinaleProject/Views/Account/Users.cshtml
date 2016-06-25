@@ -20,6 +20,10 @@
     pageSize = pageSize ?? 10;
     var model = AccountModel.GetAll().OrderBy(x => x.Name);
     var itemsPerPage = model.ToPagedList((int)pageNumber, (int)pageSize);
-    Response.Write(Json.Encode(itemsPerPage));
+    int totalCount = model.Count();
+    Response.Write(Json.Encode(new {
+        items = itemsPerPage,
+        totalCount = totalCount
+    }));
 
 }

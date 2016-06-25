@@ -1,1 +1,33 @@
 ﻿<h1>Users</h1>
+
+<paginator items-count="users.pageSize" total-items="users.totalCount" current-page="users.currentPage"></paginator>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Rating</th>
+            <th>Roles</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="user in users.userList track by $index">
+            <td>
+                {{user.Name}}
+            </td>
+            <td>
+                {{user.Rating}}
+            </td>
+            <td>
+                <div  ng-if="!main.isAdmin() || user.Name === main.user.name">
+                    <span class="role-text"
+                          ng-repeat="role in user.Roles">{{role}}</span>
+                </div>
+                <div ng-if="main.isAdmin() && user.Name !== main.user.name">
+                    <md-button class="md-primary md-raised md-button md-ink-ripple role-btn"
+                               ng-repeat="role in user.Roles"> {{role}} </md-button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<paginator items-count="users.pageSize" total-items="users.totalCount" current-page="users.currentPage"></paginator>

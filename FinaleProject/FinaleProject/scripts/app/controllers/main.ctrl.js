@@ -32,5 +32,9 @@
             }, function () {
                 angular.copy({ isAuthorized: false }, vm.user);
             });
+
+        vm.isAdmin = function () {
+            return _.includes(vm.user.roles, 'Admin');
+        };
     }
 });
