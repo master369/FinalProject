@@ -1,4 +1,4 @@
-﻿App.controller('MainCtrl', function ($http) {
+﻿App.controller('MainCtrl', function ($http, alert, $scope) {
     var vm = this;
     vm.user = {
         isAuthorized: false
@@ -13,7 +13,14 @@
 
     init();
 
+
     function init() {
+
+        $scope.$on('$responseError', function (event, errorMessage) {
+            errorMessage = errorMessage.split('\n');
+            alert(errorMessage, 7000);
+        });
+
         $http.post('Views/Account/isAuthorized.cshtml')
             .then(function (res) {
                 var data = res.data;

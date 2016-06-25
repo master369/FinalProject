@@ -22,9 +22,11 @@
                     roles: data.Roles
                 }, $scope.main.user);
                 $state.go('home');
-            }, function () {
+            }, function (res) {
                 console.dir(arguments);
-                //todo show error message
+                var data = res.data;
+                user.password = "";
+
             });
     };
 });

@@ -4,11 +4,20 @@
 {
     string Login = Request["Login"];
     string Password = Request["Password"];
+    string ConfirmPassword = Request["ConfirmPassword"];
+    if (Password != ConfirmPassword)
+    {
+        Response.Write("Password does not match the confirm password!");
+        Response.SetStatus(HttpStatusCode.BadRequest);
+    }
+
     var accountModel = new AccountModel()
     {
         Name = Login,
         Password = Password
     };
+
+
     if (AccountModel.Add(accountModel))
     {
         FormsAuthentication.SetAuthCookie(Login, createPersistentCookie: true);
@@ -17,6 +26,7 @@
     }
     else
     {
+        Response.Write("User with the same name already exists!");
         Response.SetStatus(HttpStatusCode.BadRequest);
     }
 

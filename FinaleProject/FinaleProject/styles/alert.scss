@@ -1,0 +1,63 @@
+﻿/*styles for error alert*/
+.modal-alert {
+	position: fixed;
+	bottom: 100%;
+	overflow: visible !important;
+}
+
+.modal-content {
+	position: relative;
+}
+
+	.modal-content .close {
+		position: absolute;
+		top: 0px;
+		right: 5px;
+	}
+
+
+.modal-content {
+	position: fixed;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 15px 50px;
+}
+
+.modal-error-state {
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 35px;
+	text-align: center;
+}
+
+	.modal-error-state .glyphicon {
+		font-size: 16px;
+		color: #fff;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.modal-error-state .vertical-helper {
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+		width: 0px;
+	}
+
+
+
+.modal-error-state {
+	background-color: #f00;
+}
+
+.modal-body {
+	padding: 0;
+}
+
+.items-list {
+	overflow-y: auto;
+	max-height: 330px;
+	padding-top: 3px;
+}

@@ -1,6 +1,5 @@
 ﻿App.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
     $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
-    //$httpProvider.defaults.paramSerializer = '$httpParamSerializerJQLike';
     $httpProvider.interceptors.push(function ($q) {
         return {
             'responseError': function (response) {
@@ -13,10 +12,19 @@
                 if (_.isObject(config.data)) config.data = $.param(config.data);
                 return config;
             },
-
         };
     });
-
+    $httpProvider.interceptors.push(['$rootScope', '$q', function ($rootScope, $q) {
+        return {
+            'responseError': function (rejection) {
+                if (angular.isDefined(rejection.data)) {
+                    //broadcasting of event for opening of the error modal
+                    $rootScope.$broadcast('$responseError', rejection.data);
+                }
+                return $q.reject(rejection);
+            }
+        };
+    }]);
 
 
     $urlRouterProvider.otherwise("/home");

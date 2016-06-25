@@ -10,6 +10,7 @@
     }
     else
     {
-        Response.SetStatus(HttpStatusCode.Unauthorized);
+        Response.Write("You are not authorized");
+        Response.SetStatus(HttpStatusCode.BadRequest);
     }
 }

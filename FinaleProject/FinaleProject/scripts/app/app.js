@@ -1,2 +1,2 @@
 ﻿/// <reference path="C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bower_components/angular/angular.js" />
-var App = angular.module('app', ['ui.router', 'ngAnimate', 'ngMaterial', 'ngAria', 'ngMessages', 'templates']);
+var App = angular.module('app', ['ui.router', 'ngAnimate', 'ngMaterial', 'ngAria', 'ngMessages', 'templates', 'ui.bootstrap']);

@@ -1,0 +1,26 @@
+estimations:
+1) error messages for login and sigup pages. (2h) +
+2) users page
+2.1) create server method which should return users list according to page number and page size.(2h)
+2.2) create ui for users page
+2.2.1) create static markup (1h)
+2.2.2) create paging directive (1.5h)
+2.2.3) summarize ui and server logic (1.5h)
+2.2.4) add functional for changing userroles (2h)
+3) create albums page
+3.1) create static markup (2.5h)
+3.2) create server method which should return albums list according to username.(2.5h)
+3.3) create filter by album name (1h)
+4) create photos page
+4.1) create fullscreen mode for each photo 
+4.1.1) create fullscreen window (1h)
+4.1.2) add comments markup (1h) 
+4.1.2.1) add js logic (add remove comments   1.5h)
+4.1.3) create server logic for getting this comments (1h) 
+4.1.4) add moderators functional for removing comments and photos and albums(5h)
+5) create search page 
+5.1) create server logic for searching according to search type (user, album, photo         4h)
+5.2) create static markup (1.5h )
+5.3) create js logic (1.5h)
+6) create home page with top 10 user by rating  (3h)
+35.5 h  
