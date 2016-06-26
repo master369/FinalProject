@@ -139,7 +139,7 @@ namespace DAL.DataBase
             {
                 using (var connection = new SqlConnection(_connectionString))
                 {
-                    var command = new SqlCommand("DELETE FROM dbo.[AccountsWithRoles] WHERE [AccountLogin] = @Login And [RoleId] = @Role ", connection);
+                    var command = new SqlCommand("DELETE FROM dbo.[AccountsWithRoles] WHERE [AccountLogin] = @Login And [Role_Id] = @Role ", connection);
                     command.Parameters.AddWithValue("@Login", name);
                     command.Parameters.AddWithValue("@Role", _roleContainer.FirstOrDefault(x => x.Value == role).Key);
                     connection.Open();

@@ -36,10 +36,15 @@
           controllerAs: "home",
       })
       .state('albums', {
-          url: "/albums",
+          url: "/albums?username",
           templateUrl: "Albums.html",
           controller: "AlbumsCtrl",
           controllerAs: "albums",
+          params: {
+              username: {
+                  value: '',
+              }
+          },
       })
     .state('login', {
         url: "/login",

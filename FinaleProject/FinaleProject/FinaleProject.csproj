@@ -1005,11 +1005,13 @@
     <Content Include="scripts\app\controllers\main.ctrl.js" />
     <Content Include="scripts\app\controllers\signup.ctrl.js" />
     <Content Include="scripts\app\controllers\users.ctrl.js" />
+    <Content Include="scripts\app\directives\paginator.directive.js" />
     <Content Include="scripts\app\services\alert.service.js" />
     <Content Include="styles\allStyles.css" />
     <Content Include="templates\Albums.html" />
     <Content Include="templates\Alert.html" />
     <Content Include="templates\LogIn.html" />
+    <Content Include="templates\paginator.html" />
     <Content Include="templates\Photos.html" />
     <Content Include="templates\Search.html" />
     <Content Include="templates\SignUp.html" />
@@ -1135,6 +1137,8 @@
     <Content Include="bower_components\angular-bootstrap\package.json" />
     <Content Include="bower_components\angular-bootstrap\README.md" />
     <Content Include="styles\alert.scss" />
+    <Content Include="styles\users.scss" />
+    <Content Include="Views\Account\ChangeRole.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1163,7 +1167,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="scripts\app\directives\" />
     <Folder Include="Views\Comment\" />
     <Folder Include="Views\Error\" />
   </ItemGroup>

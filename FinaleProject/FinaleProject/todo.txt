@@ -6,7 +6,7 @@ estimations:
 2.2.1) create static markup (1h)+
 2.2.2) create paging directive (1.5h)+
 2.2.3) summarize ui and server logic (1.5h)+
-2.2.4) add functional for changing userroles (2h)
+2.2.4) add functional for changing userroles(2h)+
 3) create albums page
 3.1) create static markup (2.5h)
 3.2) create server method which should return albums list according to username.(2.5h)

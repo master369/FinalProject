@@ -1,6 +1,22 @@
 ﻿<h1>Albums:</h1>
 
+<form novalidate name="albumForm" ng-submit="albumForm.$valid && albums.addAlbum()">
+    <md-content class="md-no-momentum">
+        <md-input-container class="md-icon-float md-block">
+            <label>Album title</label>
+            <md-icon md-svg-src="/styles/icons/ic_person_black_24px.svg" class="name"></md-icon>
+            <input ng-model="albums.newAlbumName"
+                   type="text"
+                   name="newAlbumName"
+                   ng-required="true">
+        </md-input-container>
+        <md-button class="md-raised md-primary" type="submit">Add</md-button>
+    </md-content>
+</form>
 <div class="container">
-    <img src="Views/1.jpg" class="img-rounded" ng-repeat="album in albums.albums track by $index" style="width:250px; height:250px; margin: 20px;">
+    <img src="Views/1.jpg" 
+         class="img-rounded" 
+         ng-repeat="album in albums.albums track by $index" 
+         style="width:250px; height:250px; margin: 20px;">
 </div>
 

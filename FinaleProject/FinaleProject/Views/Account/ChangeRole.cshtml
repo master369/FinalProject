@@ -1,0 +1,29 @@
+﻿@using FinaleProject.Models;
+@if (IsPost)
+{
+    if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+    {
+        var addFlag = Convert.ToBoolean(Request["addFlag"]);
+        var username  = Request["username"];
+        var userrole = Request["userrole"];
+        if (addFlag)
+        {
+            AccountModel.AddRole(username, userrole);
+        }
+        else
+        {
+            AccountModel.DeleteRole(username, userrole);
+        }
+        var data = new { Name = username, Roles = AccountModel.Get(username).Roles };
+        Response.Write(Json.Encode(data));
+    }
+
+    else
+    {
+        Response.Write("You have no power here!");
+        Response.SetStatus(HttpStatusCode.BadRequest);
+    }
+
+
+
+}

@@ -1,9 +1,44 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
-        <title></title>
-    </head>
-    <body>
+﻿@using FinaleProject.Models;
 
-    </body>
-</html>
+
+@if (IsPost)
+{
+    Action badRequest = () =>
+    {
+        Response.Write("You have no power here!");
+        Response.SetStatus(HttpStatusCode.BadRequest);
+    };
+
+    var myUsername = User.Identity.Name;
+    var typeOfChange = Request["typeOfChange"];
+    var username = Request["username"];
+    if (User.Identity.IsAuthenticated)
+    {
+        switch (typeOfChange)
+        {
+            case "get": break;
+            case "getAll": break;
+            case "post":
+                if (myUsername != username)
+                {
+                    badRequest();
+                }
+                var albumName = Request["albumName"];
+                AlbumModel.AddAlbum(username, albumName);
+                var data = new { Name = username, AlbumList = AlbumModel.GetByAccount(username) };
+                Response.Write(Json.Encode(data));
+                break;
+            case "put": break;
+            case "delete": break;
+            default:
+                break;
+        }
+
+
+    }
+    else
+    {
+        badRequest();
+    }
+}
+
