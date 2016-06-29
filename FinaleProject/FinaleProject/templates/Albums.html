@@ -13,10 +13,12 @@
         <md-button class="md-raised md-primary" type="submit">Add</md-button>
     </md-content>
 </form>
-<div class="container">
-    <img src="Views/1.jpg" 
-         class="img-rounded" 
-         ng-repeat="album in albums.albums track by $index" 
-         style="width:250px; height:250px; margin: 20px;">
+<div class="container" >
+    <div class="album-item" ng-repeat="album in albums.albums track by $index">
+        <i class="glyphicon glyphicon-remove album-delete" ng-click="albums.removeAlbum(album.Id)"></i>
+        <img src=""
+             class="img-rounded">
+        <span class="album-title" ui-sref="photos({username:albums.username, albumId:album.Id})">{{album.Title}}</span>
+    </div>
 </div>
 

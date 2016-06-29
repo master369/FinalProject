@@ -12,8 +12,6 @@
     };
 
     init();
-
-
     function init() {
 
         $scope.$on('$responseError', function (event, errorMessage) {

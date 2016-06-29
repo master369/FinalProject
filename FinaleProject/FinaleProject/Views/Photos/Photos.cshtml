@@ -1,9 +1,100 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
-        <title></title>
-    </head>
-    <body>
+﻿@using FinaleProject.Models;
+@if (IsPost)
+{
 
-    </body>
-</html>
+    Action badRequest = () =>
+    {
+        Response.Write("You have no power here!");
+        Response.SetStatus(HttpStatusCode.BadRequest);
+    };
+
+    Action get = () =>
+    {
+        Response.Write("You have no power here!");
+        Response.SetStatus(HttpStatusCode.BadRequest);
+    };
+
+    Action getAll = () =>
+    {
+        Response.Write("Not implemented");
+        Response.SetStatus(HttpStatusCode.BadRequest);
+    };
+
+    Action delete = () =>
+    {
+        Response.Write("You have no power here!");
+        Response.SetStatus(HttpStatusCode.BadRequest);
+    };
+    var myUsername = User.Identity.Name;
+    var typeOfChange = Request["typeOfChange"];
+    var username = Request["username"];
+    if (User.Identity.IsAuthenticated)
+    {
+
+        switch (typeOfChange)
+        {
+            case "get":
+                get();
+                int albumid = int.Parse(Request["albumid"]);
+                AlbumModel.GetAlbum(albumid);
+
+                break;
+            case "getAll":
+                getAll();
+                var data = new { Name = username, PhotosList = AlbumModel.GetByAccount(username) };
+                Response.Write(Json.Encode(data));
+                break;
+            case "post":
+                if (myUsername != username)
+                {
+                    badRequest();
+                }
+                // post();
+                var albumId = int.Parse(Request["albumId"]);
+                var file = Request.Files["uploaded"];
+                for (int i = 0; i < Request.Files.Count; i++)
+                {
+                    HttpPostedFileBase fileUpload = Request.Files[i];
+                    if (fileUpload == null || fileUpload.ContentLength == 0)
+                    {
+                        Response.SetStatus(HttpStatusCode.BadRequest);
+                        return;
+                    }
+
+                    var imageFile = new PhotoModel()
+                    {
+                        Image = fileUpload,
+                        AddDate = DateTime.Now,
+                        Title = fileUpload.FileName,
+                        AlbumId = albumId,
+                        AccountLogin = User.Identity.Name,
+                    };
+                    AlbumModel.AddPhoto(imageFile);
+                }
+                data = new { Name = username, PhotosList = AlbumModel.GetByAccount(username) };
+                Response.Write(Json.Encode(data));
+                break;
+            case "delete":
+                albumid = int.Parse(Request["albumid"]);
+                //TODO: allow access to moderator and admin
+                if (myUsername != username)
+                {
+                    badRequest();
+
+                }
+                delete();
+                var albumName = Request["albumName"];
+                AlbumModel.DeleteAlbum(albumid);
+                data = new { Name = username, PhotosList = AlbumModel.GetByAccount(username) };
+                Response.Write(Json.Encode(data));
+                break;
+            default:
+                break;
+        }
+    }
+    else
+    {
+        badRequest();
+    }
+}
+

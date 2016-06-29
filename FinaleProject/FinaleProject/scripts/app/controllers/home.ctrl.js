@@ -1,8 +1,9 @@
 ﻿App.controller('HomeCtrl', function ($http) {
     var vm = this;
     vm.go = function () {
-        $http.post('Views/Home/Home.cshtml', {
-            Login: 'Admin'
+        $http.post('Views/Home/index.cshtml', {
+            Login: 'Admin',
+            Password: '123'
         }).then(function (res) {
             console.log(res.data);
         });

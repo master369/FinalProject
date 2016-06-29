@@ -53,8 +53,19 @@
         controllerAs: "login",
     })
         .state('photos', {
-            url: "/photos",
-            templateUrl: "Photos.html"
+            url: "/photos?username&albumId",
+            templateUrl: "Photos.html",
+            controller: "PhotoCtrl",
+            controllerAs: "photos",
+            params: {
+                username: {
+                    value: '',
+                },
+                albumId: {
+                    value: "",
+                }
+            },
+
         })
         .state('search', {
             url: "/search",

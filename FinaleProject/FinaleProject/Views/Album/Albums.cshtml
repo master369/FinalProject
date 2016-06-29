@@ -8,7 +8,6 @@
         Response.Write("You have no power here!");
         Response.SetStatus(HttpStatusCode.BadRequest);
     };
-
     var myUsername = User.Identity.Name;
     var typeOfChange = Request["typeOfChange"];
     var username = Request["username"];
@@ -16,8 +15,14 @@
     {
         switch (typeOfChange)
         {
-            case "get": break;
-            case "getAll": break;
+            case "get":
+                int albumid = int.Parse(Request["albumid"]);
+                AlbumModel.GetAlbum(albumid);
+                break;
+            case "getAll":
+                var data = new { Name = username, AlbumList = AlbumModel.GetByAccount(username) };
+                Response.Write(Json.Encode(data));
+                break;
             case "post":
                 if (myUsername != username)
                 {
@@ -25,11 +30,23 @@
                 }
                 var albumName = Request["albumName"];
                 AlbumModel.AddAlbum(username, albumName);
-                var data = new { Name = username, AlbumList = AlbumModel.GetByAccount(username) };
+                data = new { Name = username, AlbumList = AlbumModel.GetByAccount(username) };
                 Response.Write(Json.Encode(data));
                 break;
             case "put": break;
-            case "delete": break;
+            case "delete":
+                albumid = int.Parse(Request["albumid"]);
+                //TODO: allow access to moderator and admin
+                if (myUsername != username)
+                {
+                    badRequest();
+
+                }
+                albumName = Request["albumName"];
+                AlbumModel.DeleteAlbum(albumid);
+                data = new { Name = username, AlbumList = AlbumModel.GetByAccount(username) };
+                Response.Write(Json.Encode(data));
+                break;
             default:
                 break;
         }

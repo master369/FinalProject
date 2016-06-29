@@ -1,13 +1,26 @@
 ﻿<h1>Photos:</h1>
-
+<div class="upload-container">
+    <div class="box">
+        <div class="box__input">
+            <input class="box__file" 
+                   type="file" 
+                   name="files[]" 
+                   id="file" 
+                   data-multiple-caption="{count} files selected" 
+                   multiple 
+                   file-model="myFile"/>
+            <label for="file"><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>
+        </div>
+    </div>
+</div>
 <div class="container">
-    <div class="photo-container" ng-repeat="item in [1,2,3,4]">
+    <div class="photo-container" ng-repeat="photo in photos.photos track by $index">
         <img src="Views/1.jpg">
         <div class="photo-controls">
             <md-button class="md-icon-button md-accent" aria-label="Favorite">
                 <md-icon md-svg-icon="/styles/icons/favorite.svg"></md-icon>
             </md-button>
-            <md-button class="md-icon-button launch">
+            <md-button class="md-icon-button launch" ng-click="showPhoto($event)">
                 <md-icon md-svg-icon="/styles/icons/zoom.svg"></md-icon>
             </md-button>
         </div>

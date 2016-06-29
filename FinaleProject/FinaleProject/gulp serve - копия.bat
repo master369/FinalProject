@@ -1,1 +1,1 @@
-bower install angular-bootstrap
+bower install angular-messages

@@ -1001,12 +1001,16 @@
     <Content Include="bower_components\jquery\README.md" />
     <Content Include="bower_components\jquery\src\.jshintrc" />
     <Content Include="scripts\app\controllers\albums.ctrl.js" />
+    <Content Include="scripts\app\controllers\comments.ctrl.js" />
     <Content Include="scripts\app\controllers\login.ctrl.js" />
     <Content Include="scripts\app\controllers\main.ctrl.js" />
+    <Content Include="scripts\app\controllers\photo.ctrl.js" />
     <Content Include="scripts\app\controllers\signup.ctrl.js" />
     <Content Include="scripts\app\controllers\users.ctrl.js" />
+    <Content Include="scripts\app\directives\fileModel.directive.js" />
     <Content Include="scripts\app\directives\paginator.directive.js" />
     <Content Include="scripts\app\services\alert.service.js" />
+    <Content Include="scripts\app\services\fileUpload.service.js" />
     <Content Include="styles\allStyles.css" />
     <Content Include="templates\Albums.html" />
     <Content Include="templates\Alert.html" />
@@ -1015,10 +1019,12 @@
     <Content Include="templates\Photos.html" />
     <Content Include="templates\Search.html" />
     <Content Include="templates\SignUp.html" />
+    <Content Include="templates\ZoomPhoto.html" />
     <Content Include="Views\1.jpg" />
     <Content Include="Views\Account\SignUp.cshtml" />
     <Content Include="Views\Account\LogIn.cshtml" />
     <Content Include="Views\Account\Logout.cshtml" />
+    <Content Include="Views\Koala.jpg" />
     <Content Include="Views\Search\Search.cshtml" />
     <Content Include="Views\Home\Home.cshtml" />
     <Content Include="Views\Album\Albums.cshtml" />
@@ -1139,6 +1145,14 @@
     <Content Include="styles\alert.scss" />
     <Content Include="styles\users.scss" />
     <Content Include="Views\Account\ChangeRole.cshtml" />
+    <Content Include="styles\icons\ic_account_circle_black_24px.svg" />
+    <Content Include="styles\icons\ic_close_black_24px.svg" />
+    <Content Include="styles\icons\ic_close_white_24px.svg" />
+    <Content Include="styles\icons\ic_lock_black_24px.svg" />
+    <Content Include="styles\icons\ic_perm_identity_black_24px.svg" />
+    <Content Include="styles\Albums.scss" />
+    <Content Include="styles\zoomphoto.scss" />
+    <Content Include="styles\simpleclasses.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

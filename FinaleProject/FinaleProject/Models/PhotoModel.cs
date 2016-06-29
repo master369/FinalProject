@@ -68,6 +68,18 @@ namespace FinaleProject.Models
             };
         }
 
+        public static IEnumerable<PhotoModel>GetPhotosByAlbum(int albumId)
+        {
+            var photos = Logic.photosLogic.GetPhotosByAlbum(albumId).ToList();
+            var model = photos.Select(ent => new PhotoModel
+            {
+                Title = ent.Title,
+                Id = ent.Id,
+                AlbumId = ent.AlbumId,
+                LikesContainer = ent.LikesContainer,
+            }).ToList();
+            return model;
+        }
         public static bool LikePhoto(int id, string login)
         {
             return Logic.photosLogic.LikePhoto(id, login);
