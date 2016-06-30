@@ -75,14 +75,13 @@
 
     function uploadFile(file) {
         var uploadUrl = 'Views/Photos/Photos.cshtml';
-        fileUpload.uploadFileToUrl({
+        fileUpload.uploadFileToUrl(uploadUrl, file, {
             typeOfChange: 'post',
             albumId: albumId,
-            uploaded: file
-        }, uploadUrl).then(function (res) {
+            username: vm.username
+        }).then(function (res) {
             var data = res.data;
             document.querySelectorAll('[type="file"]')[0].value = "";
         });
     };
-
 });

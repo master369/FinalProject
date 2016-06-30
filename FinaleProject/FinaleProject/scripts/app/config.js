@@ -9,7 +9,7 @@
                 return $q.reject(response);
             },
             'request': function (config) {
-                if (_.isObject(config.data)) config.data = $.param(config.data);
+                if (_.isObject(config.data) && !(config.data instanceof FormData)) config.data = $.param(config.data);
                 return config;
             },
         };

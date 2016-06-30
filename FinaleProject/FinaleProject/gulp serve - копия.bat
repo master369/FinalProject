@@ -1,1 +1,1 @@
-bower install angular-messages
+bower i oi.file -save
