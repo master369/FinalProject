@@ -72,6 +72,7 @@
                     AlbumModel.AddPhoto(imageFile);
                 }
                 data = new { Name = username, PhotosList = AlbumModel.GetByAccount(username) };
+                //Todo return only PhotoIds in photoslist 
                 Response.Write(Json.Encode(data));
                 break;
             case "delete":

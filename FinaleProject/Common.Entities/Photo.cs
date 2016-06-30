@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Common.Entities
 {
@@ -37,7 +36,19 @@ namespace Common.Entities
             LikesContainer = new List<string>();
             AddDate = DateTime.Now;
             AccountLogin = accountLogin;
+            #region Make_Small_Image
+            Image img = ByteToImage(image);
+            Size s = new Size();
+
+            s.Width = 400;
+            s.Height = 400 * img.Height / img.Width;
+            Bitmap holst = new Bitmap(img, s);
+            img = (Image)holst;
+
+            #endregion
             OriginalImage = image;
+            SmallImage = ImageToByte(img);
+
 
         }
 
@@ -57,5 +68,18 @@ namespace Common.Entities
 
         public string AccountLogin { get; set; }
 
+        private static byte[] ImageToByte(Image img)
+        {
+            ImageConverter converter = new ImageConverter();
+            return (byte[])converter.ConvertTo(img, typeof(byte[]));
+        }
+
+        private static Image ByteToImage(byte[] byteArrayIn)
+        {
+            using (var ms = new MemoryStream(byteArrayIn))
+            {
+                return Image.FromStream(ms);
+            }
+        }
     }
 }

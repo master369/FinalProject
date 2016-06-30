@@ -30,13 +30,13 @@ namespace DAL.DataBase
             {
                 using (var connection = new SqlConnection(_connectionString))
                 {
-                    var command = new SqlCommand("SELECT [Id], [AlbumId], [Original], [Small], [Date], [AccountLogin], [Title] FROM dbo.[Photos]", connection);
+                    var command = new SqlCommand("SELECT [Id], [Album_Id], [Original], [Small], [Date], [AccountLogin], [Title] FROM dbo.[Photos]", connection);
                     connection.Open();
                     var reader = command.ExecuteReader();
 
                     while (reader.Read())
                     {
-                        photos.Add(new Photo((int)reader["Id"], (int)reader["AlbumId"], (string)reader["Title"],
+                        photos.Add(new Photo((int)reader["Id"], (int)reader["Album_Id"], (string)reader["Title"],
                                             (string)reader["AccountLogin"], (byte[])reader["Original"]));
                     }
                 }
@@ -61,7 +61,7 @@ namespace DAL.DataBase
             {
                 using (var connection = new SqlConnection(_connectionString))
                 {
-                    var command = new SqlCommand("SELECT [Id], [AlbumId], [Original], [Small], [Date], [AccountLogin], [Title] FROM dbo.[Photos] WHERE [AccountLogin] = @Login", connection);
+                    var command = new SqlCommand("SELECT [Id], [Album_Id], [Original], [Small], [Date], [AccountLogin], [Title] FROM dbo.[Photos] WHERE [AccountLogin] = @Login", connection);
                     command.Parameters.AddWithValue("@Login", login);
 
                     connection.Open();
@@ -69,7 +69,7 @@ namespace DAL.DataBase
 
                     while (reader.Read())
                     {
-                        photos.Add(new Photo((int)reader["Id"], (int)reader["AlbumId"], (string)reader["Title"],
+                        photos.Add(new Photo((int)reader["Id"], (int)reader["Album_Id"], (string)reader["Title"],
                                             (string)reader["AccountLogin"], (byte[])reader["Original"]));
                     }
                 }
@@ -94,14 +94,14 @@ namespace DAL.DataBase
             {
                 using (var connection = new SqlConnection(_connectionString))
                 {
-                    var command = new SqlCommand("SELECT [Id], [AlbumId], [Original], [Small], [Date], [AccountLogin], [Title] FROM dbo.[Photos] WHERE [Id] = @Id", connection);
+                    var command = new SqlCommand("SELECT [Id], [Album_Id], [Original], [Small], [Date], [AccountLogin], [Title] FROM dbo.[Photos] WHERE [Id] = @Id", connection);
                     command.Parameters.Add("@Id", id);
                     connection.Open();
                     var reader = command.ExecuteReader();
 
                     if (!reader.Read()) return null;
 
-                    ent = new Photo((int)reader["Id"], (int)reader["AlbumId"], (string)reader["Title"],
+                    ent = new Photo((int)reader["Id"], (int)reader["Album_Id"], (string)reader["Title"],
                                             (string)reader["AccountLogin"], (byte[])reader["Original"]);
                     ent.LikesContainer = GetLikesForPhoto(ent.Id);
                 }
@@ -134,21 +134,21 @@ namespace DAL.DataBase
 
         }
 
-        public void AddPhoto(int albumId, string title, string accountLogin, byte[] image)
+        public void AddPhoto(int Album_Id, string title, string accountLogin, byte[] image)
         {
-            var ent = new Photo(0, albumId, title, accountLogin, image);
+            var ent = new Photo(0, Album_Id, title, accountLogin, image);
             try
             {
                 using (var connection = new SqlConnection(_connectionString))
                 {
-                    var commandInsert = new SqlCommand("INSERT INTO dbo.[Photos] ([Original], [Small], [Date], [AccountLogin], [Title], [AlbumId])" +
-                                                        " VALUES (@Original, @Small, @Date, @AccountLogin, @Title, @AlbumId) ", connection);
+                    var commandInsert = new SqlCommand("INSERT INTO dbo.[Photos] ([Original], [Small], [Date], [AccountLogin], [Title], [Album_Id])" +
+                                                        " VALUES (@Original, @Small, @Date, @AccountLogin, @Title, @Album_Id) ", connection);
                     commandInsert.Parameters.AddWithValue("@Original", ent.OriginalImage);
                     commandInsert.Parameters.AddWithValue("@Small", ent.SmallImage);
                     commandInsert.Parameters.AddWithValue("@Date", ent.AddDate);
                     commandInsert.Parameters.AddWithValue("@AccountLogin", ent.AccountLogin);
                     commandInsert.Parameters.AddWithValue("@Title", ent.Title);
-                    commandInsert.Parameters.AddWithValue("@AlbumId", ent.AlbumId);
+                    commandInsert.Parameters.AddWithValue("@Album_Id", ent.AlbumId);
                     connection.Open();
                     var result = commandInsert.ExecuteNonQuery();
                 }

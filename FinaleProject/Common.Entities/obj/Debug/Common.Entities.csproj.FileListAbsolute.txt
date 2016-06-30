@@ -2,4 +2,3 @@ C:\Users\Master\Documents\FinalProject\FinaleProject\Common.Entities\bin\Debug\C
 C:\Users\Master\Documents\FinalProject\FinaleProject\Common.Entities\bin\Debug\Common.Entities.pdb
 C:\Users\Master\Documents\FinalProject\FinaleProject\Common.Entities\obj\Debug\Common.Entities.dll
 C:\Users\Master\Documents\FinalProject\FinaleProject\Common.Entities\obj\Debug\Common.Entities.pdb
-C:\Users\Master\Documents\FinalProject\FinaleProject\Common.Entities\obj\Debug\Common.Entities.csprojResolveAssemblyReference.cache
