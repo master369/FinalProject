@@ -35,13 +35,18 @@
         {
             case "get":
                 get();
-                int albumid = int.Parse(Request["albumid"]);
-                AlbumModel.GetAlbum(albumid);
+                int photoId = int.Parse(Request["photoId"]);
+                Response.WriteBinary(PhotoModel.GetSmallImage(photoId));
 
                 break;
             case "getAll":
-                getAll();
-                var data = new { Name = username, PhotosList = AlbumModel.GetByAccount(username) };
+                //getAll();
+                var albumId = int.Parse(Request["albumId"]);
+                var photos = AlbumModel.GetAllPhotosByAlbum(albumId).ToArray();
+                //var photos= PhotoModel.GetAllIdPhotosByAlbum(albumId);
+                var data = new { Name = username, PhotosList = PhotoModel.GetAllPhotosByAlbum(albumId) };
+
+
                 Response.Write(Json.Encode(data));
                 break;
             case "post":
@@ -50,7 +55,7 @@
                     badRequest();
                 }
                 // post();
-                var albumId = int.Parse(Request["albumId"]);
+                albumId = int.Parse(Request["albumId"]);
                 var file = Request.Files["uploaded"];
                 for (int i = 0; i < Request.Files.Count; i++)
                 {
@@ -71,12 +76,12 @@
                     };
                     AlbumModel.AddPhoto(imageFile);
                 }
-                data = new { Name = username, PhotosList = AlbumModel.GetByAccount(username) };
-                //Todo return only PhotoIds in photoslist 
+                data = new { Name = username,  PhotosList = PhotoModel.GetAllPhotosByAlbum(albumId)};
+                //Todo return only PhotoIds in photoslist(by albumid)
                 Response.Write(Json.Encode(data));
                 break;
             case "delete":
-                albumid = int.Parse(Request["albumid"]);
+                //albumid = int.Parse(Request["albumid"]);
                 //TODO: allow access to moderator and admin
                 if (myUsername != username)
                 {
@@ -84,10 +89,10 @@
 
                 }
                 delete();
-                var albumName = Request["albumName"];
-                AlbumModel.DeleteAlbum(albumid);
-                data = new { Name = username, PhotosList = AlbumModel.GetByAccount(username) };
-                Response.Write(Json.Encode(data));
+                //var albumName = Request["albumName"];
+                //AlbumModel.DeleteAlbum(albumid);
+                //data = new { Name = username, PhotosList = AlbumModel.GetByAccount(username) };
+                //Response.Write(Json.Encode(data));
                 break;
             default:
                 break;

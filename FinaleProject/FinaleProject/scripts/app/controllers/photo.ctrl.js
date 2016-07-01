@@ -58,6 +58,7 @@
     function init() {
         $http.post('Views/Photos/Photos.cshtml', {
             typeOfChange: 'getAll',
+            albumId : albumId,
             username: $stateParams.username,
         }).then(function (res) {
             var data = res.data;

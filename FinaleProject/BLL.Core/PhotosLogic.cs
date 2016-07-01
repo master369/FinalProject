@@ -18,6 +18,7 @@ namespace BLL.Core
             photosDAO = DAOContainer.PhotosDAO;
         }
 
+
         public void AddPhoto(int albumId, string title, string accountLogin, byte[] image)
         {
             photosDAO.AddPhoto(albumId, title, accountLogin, image);
@@ -42,7 +43,10 @@ namespace BLL.Core
         {
             return photosDAO.GetPhoto(id);
         }
-
+        public IEnumerable<Photo> GetAllPhotosByAlbum(int albumId)
+        {
+            return photosDAO.GetAllPhotosByAlbum(albumId);
+        }
         public IEnumerable<Photo> GetPhotosByAlbum(int albumId)
         {
             return photosDAO.GetAllPhotos().Where(x => x.AlbumId == albumId);

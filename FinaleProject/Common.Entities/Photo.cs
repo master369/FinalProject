@@ -11,6 +11,12 @@ namespace Common.Entities
 {
    public class Photo
     {
+        private int v1;
+        private int v2;
+        private DateTime dateTime;
+        private string v3;
+        private string v4;
+
         public Photo()
         {
             Id = 0;
@@ -48,8 +54,15 @@ namespace Common.Entities
             #endregion
             OriginalImage = image;
             SmallImage = ImageToByte(img);
+        }
 
-
+        public Photo(int id, int albumId, DateTime dateTime, string title, string accountLogin)
+        {
+            Id = id;
+            AlbumId = albumId;
+            Title = title;
+            AddDate = dateTime;
+            AccountLogin = accountLogin;
         }
 
         public int Id { get; set; }

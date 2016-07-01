@@ -53,7 +53,18 @@ namespace FinaleProject.Models
                 LikesContainer = ent.LikesContainer,
             });
         }
-
+        public static IEnumerable<PhotoModel> GetAllPhotosByAlbum(int albumId)
+        {
+            var photos = Logic.photosLogic.GetAllPhotosByAlbum(albumId);
+            return photos.ToList().Select(ent => new PhotoModel
+            {
+                Title = ent.Title,
+                Id = ent.Id,
+                AlbumId = ent.AlbumId,
+                AddDate = ent.AddDate,
+                AccountLogin = ent.AccountLogin,
+            });
+        } 
         public static PhotoModel Get(int photoId)
         {
             Photo ent = Logic.photosLogic.GetPhoto(photoId);
@@ -68,22 +79,15 @@ namespace FinaleProject.Models
             };
         }
 
-        public static IEnumerable<PhotoModel>GetPhotosByAlbum(int albumId)
-        {
-            var photos = Logic.photosLogic.GetPhotosByAlbum(albumId).ToList();
-            var model = photos.Select(ent => new PhotoModel
-            {
-                Title = ent.Title,
-                Id = ent.Id,
-                AlbumId = ent.AlbumId,
-                LikesContainer = ent.LikesContainer,
-            }).ToList();
-            return model;
-        }
+
+
         public static bool LikePhoto(int id, string login)
         {
             return Logic.photosLogic.LikePhoto(id, login);
         }
+
+
+
     }
 
 }

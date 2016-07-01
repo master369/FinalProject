@@ -1245,6 +1245,7 @@
     <Content Include="bower_components\oi.file\demo\lib\gd.php" />
     <Content Include="bower_components\oi.file\LICENSE" />
     <Content Include="bower_components\oi.file\README.md" />
+    <Content Include="Views\Photos\GetPhotoById.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

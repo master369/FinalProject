@@ -1,0 +1,5 @@
+﻿@using FinaleProject.Models;
+@{ ///Views/Photos/GetPhotoById.cshtml?photoId=1
+    int photoId = int.Parse(Request["photoId"]);
+    Response.WriteBinary(PhotoModel.GetSmallImage(photoId));
+}

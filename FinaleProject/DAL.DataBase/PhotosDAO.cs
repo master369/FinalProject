@@ -86,7 +86,43 @@ namespace DAL.DataBase
                 yield return item;
             }
         }
+        ////     Id = id;
+        //AlbumId = albumId;
+        //    Title = title;
+        //    LikesContainer = new List<string>();
+        //    AddDate = DateTime.Now;
+        //    AccountLogin = accountLogin;
+        public IEnumerable<Photo> GetAllPhotosByAlbum(int albumId)
+        {
+            List<Photo> photos = new List<Photo>();
+            try
+            {
+                using (var connection = new SqlConnection(_connectionString))
+                {
+                    var command = new SqlCommand("SELECT [Id], [Album_Id], [Date], [AccountLogin], [Title] FROM dbo.[Photos] WHERE [Album_Id] = @AlbumId", connection);
+                    command.Parameters.AddWithValue("@AlbumId", albumId);
 
+                    connection.Open();
+                    var reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        photos.Add(new Photo((int)reader["Id"], (int)reader["Album_Id"],(DateTime)reader["Date"], (string)reader["Title"],
+                                            (string)reader["AccountLogin"]));
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                logger.Error("Ошибка при получении всех фотографий из базы данных для аккаунта!");
+            }
+
+            foreach (var item in photos)
+            {
+                item.LikesContainer = GetLikesForPhoto(item.Id);
+                yield return item;
+            }
+        }
         public Photo GetPhoto(int id)
         {
             Photo ent = null;
@@ -95,7 +131,7 @@ namespace DAL.DataBase
                 using (var connection = new SqlConnection(_connectionString))
                 {
                     var command = new SqlCommand("SELECT [Id], [Album_Id], [Original], [Small], [Date], [AccountLogin], [Title] FROM dbo.[Photos] WHERE [Id] = @Id", connection);
-                    command.Parameters.Add("@Id", id);
+                    command.Parameters.AddWithValue("@Id", id);
                     connection.Open();
                     var reader = command.ExecuteReader();
 
@@ -121,7 +157,7 @@ namespace DAL.DataBase
                 using (var connection = new SqlConnection(_connectionString))
                 {
                     var command = new SqlCommand("DELETE FROM dbo.[Photos] WHERE [Id] = @Id", connection);
-                    command.Parameters.Add("@Id", id);
+                    command.Parameters.AddWithValue("@Id", id);
                     connection.Open();
 
                     var result = command.ExecuteNonQuery();

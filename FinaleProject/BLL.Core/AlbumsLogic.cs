@@ -44,5 +44,10 @@ namespace BLL.Core
         {
             return albumsDAO.GetAll().Where(x => x.UserLogin == login);
         }
+
+        public IEnumerable<Album> GetAllForAlbum(int albumId)
+        {
+            return albumsDAO.GetAll().Where(x => x.Id == albumId);
+        }
     }
 }

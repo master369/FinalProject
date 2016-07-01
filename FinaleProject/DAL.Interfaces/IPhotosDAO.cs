@@ -19,6 +19,8 @@ namespace DAL.Interfaces
 
         IEnumerable<Photo> GetAllPhotosByAccount(string login);
 
+        IEnumerable<Photo> GetAllPhotosByAlbum(int albumId);
+
         void DeletePhoto(int id);
     }
 }

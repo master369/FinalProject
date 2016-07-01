@@ -16,7 +16,7 @@ namespace BLL.Interfaces
         void AddPhoto(int albumId, string title, string accountLogin, byte[] image);
 
         bool LikePhoto(int photoId, string login);
-
+        IEnumerable<Photo> GetAllPhotosByAlbum(int albumId);
         IEnumerable<Photo> GetAllPhotosByAccount(string login);
         IEnumerable<Photo> GetPhotosByAlbum(int albumId);
         void DeletePhoto(int id);

@@ -25,7 +25,7 @@ namespace FinaleProject.Models
             {
                 Title = ent.Title,
                 Id = ent.Id,
-                Photos = Logic.photosLogic.GetPhotosByAlbum(ent.Id).ToList(),
+                //Photos = Logic.photosLogic.GetPhotosByAlbum(ent.Id).ToList(),
             });
         }
 
@@ -48,7 +48,20 @@ namespace FinaleProject.Models
             Logic.photosLogic.AddPhoto(photo.AlbumId, photo.Title, photo.AccountLogin, image);
         }
 
+        public static IEnumerable<PhotoModel> GetPhotosByAlbum(int albumId)
+        {
+            var photos = Logic.photosLogic.GetPhotosByAlbum(albumId);
 
+            return PhotoModel.GetAll().Where(x => x.AlbumId == albumId).ToArray();
+        }
+
+        public static IEnumerable<AlbumModel> GetAllPhotosByAlbum(int albumId)
+        {
+            return Logic.albumsLogic.GetAllForAlbum(albumId).Select(ent => new AlbumModel
+            {
+                Photos = Logic.photosLogic.GetPhotosByAlbum(ent.Id).ToList(),
+            });
+        }
         public static AlbumModel GetAlbum(int albumId)
         {
             var ent = Logic.albumsLogic.GetAlbum(albumId);
