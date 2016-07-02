@@ -1,22 +1,25 @@
 ﻿<h1>Photos:</h1>
-    <div class="upload-container">
-        <div class="box">
-            <div class="box__input">
-                <input class="box__file"
-                       type="file"
-                       name="files[]"
-                       id="file"
-                       data-multiple-caption="{count} files selected"
-                       multiple
-                       file-model="myFile" />
-                <label for="file"><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>
-            </div>
+<div class="upload-container">
+    <div class="box">
+        <div class="box-input">
+            Upload Files <i class="glyphicon glyphicon-upload"></i>
+            <input class="box__file"
+                   type="file"
+                   name="files[]"
+                   id="file"
+                   data-multiple-caption="{count} files selected"
+                   multiple
+                   file-model="myFile" />
+
         </div>
+
     </div>
+</div>
 
 
 <div class="container">
     <div class="photo-container ng-cloak" ng-repeat="photo in photos.photos track by $index">
+        <i class="glyphicon glyphicon-remove delete-photo" ng-click="photos.deletePhoto(photo.Id)"></i>
         <img class="ng-cloak" src="Views/Photos/GetPhotoById.cshtml?photoId={{photo.Id}}&isBig=false">
         <div class="photo-controls">
             <md-button class="md-icon-button md-accent" aria-label="Favorite">

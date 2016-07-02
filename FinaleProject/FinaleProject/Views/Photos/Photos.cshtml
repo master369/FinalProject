@@ -20,10 +20,10 @@
         Response.SetStatus(HttpStatusCode.BadRequest);
     };
 
-    Action delete = () =>
+    Action<int> delete = (photoId) =>
     {
-        Response.Write("You have no power here!");
-        Response.SetStatus(HttpStatusCode.BadRequest);
+        AlbumModel.DeletePhoto(photoId);
+        Response.Write(HttpStatusCode.OK);
     };
     var myUsername = User.Identity.Name;
     var typeOfChange = Request["typeOfChange"];
@@ -79,18 +79,13 @@
                 Response.Write(Json.Encode(data));
                 break;
             case "delete":
-                //albumid = int.Parse(Request["albumid"]);
-                //TODO: allow access to moderator and admin
-                if (myUsername != username)
+                photoId = int.Parse(Request["photoId"]);
+                if (myUsername != username || !User.IsInRole("Moderator") || !User.IsInRole("Admin"))
                 {
                     badRequest();
-
                 }
-                delete();
-                //var albumName = Request["albumName"];
-                //AlbumModel.DeleteAlbum(albumid);
-                //data = new { Name = username, PhotosList = AlbumModel.GetByAccount(username) };
-                //Response.Write(Json.Encode(data));
+                delete(photoId);
+
                 break;
             default:
                 break;

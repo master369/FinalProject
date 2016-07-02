@@ -11,6 +11,7 @@
 
     &:hover {
         box-shadow: 0px 12px 45px rgba(0,0,0,0.7);
+
         .photo-controls {
             transform: translateX(-50%) translateY(0);
             opacity: 1;
@@ -34,21 +35,25 @@
 }
 
 .box.has-advanced-upload {
-  background-color: white;
-  outline: 2px dashed black;
-  outline-offset: -10px;
+    background-color: white;
+    outline: 2px dashed black;
+    outline-offset: -10px;
 }
+
 .box.has-advanced-upload .box__dragndrop {
-  display: inline;
+    display: inline;
 }
+
 .box.is-dragover {
-  background-color: grey;
+    background-color: grey;
 }
+
 .box.is-uploading .box__input {
-  visibility: none;
+    visibility: none;
 }
+
 .box.is-uploading .box__uploading {
-  display: block;
+    display: block;
 }
 
 
@@ -73,6 +78,7 @@
 .file-item.active .file-item-link {
     outline: solid 2px #00afea;
 }
+
 .file-item .close {
     position: absolute;
     right: 0;
@@ -97,6 +103,7 @@
 .dragover-file {
     background-color: rgba(0, 42, 128, 0.1);
 }
+
 .dragover-plain {
     background-color: rgba(255, 0, 0, 0.1);
 }
@@ -120,14 +127,55 @@
 }
 
 .progress {
-  height: 5px;
+    height: 5px;
 }
 
 .alert {
-  line-height: 1.6;
+    line-height: 1.6;
 }
 
 
-.ng-cloak{
+.ng-cloak {
     display: none !important;
+}
+
+.delete-photo {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #FFFFFF;
+    border: 1px solid;
+    border-color: #FFFFFF;
+    border-radius: 7px;
+}
+
+.box-input {
+    position: relative;
+    width: 300px;
+    height: 100px;
+    border-radius: 15px;
+    overflow: hidden;
+    font-size: 40px;
+    line-height: 100px;
+    text-align: center;
+    border: 2px solid;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: box-shadow 0.2s linear;
+    box-shadow: 0 0 0 rgba(0,0,0,0);
+
+    &:hover {
+        box-shadow: 0px 12px 45px rgba(0,0,0,0.7);
+    }
+
+    input[type="file"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        z-index: 10;
+        cursor: pointer;
+    }
 }

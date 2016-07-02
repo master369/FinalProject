@@ -29,6 +29,19 @@
             $scope.customFullscreen = (wantsFullScreen === true);
         });
     };
+    vm.deletePhoto = function (photoId) {
+        $http.post('Views/Photos/Photos.cshtml', {
+            typeOfChange: 'delete',
+            photoId: photoId,
+            username: myName
+        }).then(function (res) {
+            var photoIndex = _.findIndex(vm.photos, function (photo) {
+                return photo.Id === photoId;
+            });
+            vm.photos.splice(photoIndex, 1);
+        });
+    };
+
     function DialogController($scope, $mdDialog) {
         $scope.hide = function () {
             $mdDialog.hide();
@@ -85,6 +98,7 @@
         }).then(function (res) {
             var data = res.data;
             document.querySelectorAll('[type="file"]')[0].value = "";
+            vm.photos = data.PhotosList;
         });
     };
 });

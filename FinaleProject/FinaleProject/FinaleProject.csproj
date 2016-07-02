@@ -1091,11 +1091,13 @@
     <Content Include="scripts\app\controllers\photo.ctrl.js" />
     <Content Include="scripts\app\controllers\signup.ctrl.js" />
     <Content Include="scripts\app\controllers\users.ctrl.js" />
+    <Content Include="scripts\app\controllers\zoomphoto.ctrl.js" />
     <Content Include="scripts\app\directives\fileModel.directive.js" />
     <Content Include="scripts\app\directives\paginator.directive.js" />
     <Content Include="scripts\app\oi.file.old.js" />
     <Content Include="scripts\app\services\alert.service.js" />
     <Content Include="scripts\app\services\fileUpload.service.js" />
+    <Content Include="scripts\app\services\photo.value.js" />
     <Content Include="styles\allStyles.css" />
     <Content Include="templates\Albums.html" />
     <Content Include="templates\Alert.html" />
