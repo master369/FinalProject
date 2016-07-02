@@ -45,8 +45,6 @@
                 var photos = AlbumModel.GetAllPhotosByAlbum(albumId).ToArray();
                 //var photos= PhotoModel.GetAllIdPhotosByAlbum(albumId);
                 var data = new { Name = username, PhotosList = PhotoModel.GetAllPhotosByAlbum(albumId) };
-
-
                 Response.Write(Json.Encode(data));
                 break;
             case "post":

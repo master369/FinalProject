@@ -1,4 +1,4 @@
-﻿App.controller('PhotoCtrl', function ($scope, $mdDialog, $mdMedia, $http, $stateParams, $timeout, fileUpload) {
+﻿App.controller('PhotoCtrl', function ($scope, $mdDialog, $mdMedia, $http, $stateParams, $timeout, fileUpload, SelectedPhoto) {
     $scope.status = '  ';
     var vm = this,
        myName = $scope.main.user.name,
@@ -11,8 +11,9 @@
         }
     });
     $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
-    $scope.showPhoto = function (ev) {
+    $scope.showPhoto = function (ev, photoId) {
         var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && $scope.customFullscreen;
+        angular.copy({id: photoId} ,SelectedPhoto)
         $mdDialog.show({
             controller: DialogController,
             templateUrl: 'ZoomPhoto.html',
@@ -20,6 +21,7 @@
             targetEvent: ev,
             clickOutsideToClose: true,
             fullscreen: useFullScreen
+
         })
         $scope.$watch(function () {
             return $mdMedia('xs') || $mdMedia('sm');

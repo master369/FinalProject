@@ -1,7 +1,7 @@
 ﻿<md-dialog class="ng-cloak modal-container h100">
     <form class="h100">
         <md-toolbar>
-            <div class="md-toolbar-tools color" >
+            <div class="md-toolbar-tools color">
                 <span flex></span>
                 <md-button class="md-icon-button" ng-click="cancel()">
                     <md-icon md-svg-src="/styles/icons/ic_close_white_24px.svg" aria-label="Close dialog"></md-icon>
@@ -9,8 +9,10 @@
             </div>
         </md-toolbar>
         <md-dialog-content class="h100">
-            <div class="md-dialog-content zoom-content h100">
-                <div class="image-wrapper"> <img class="h100 w100" src="Views/1.jpg">  </div>
+            <div class="md-dialog-content zoom-content h100" ng-controller="ZoomPhotoCtrl as zoomPhoto">
+                <div class="image-wrapper">
+                    <img class="h100 w100" src="Views/Photos/GetPhotoById.cshtml?photoId={{zoomPhoto.photoId}}&isBig=true">
+                </div>
                 <div ng-controller="CommentsCtrl" class="ng-cloak">
                     <md-content class="comments-container " md-theme="altTheme">
                         <section>

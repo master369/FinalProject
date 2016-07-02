@@ -1,5 +1,23 @@
 ﻿@using FinaleProject.Models;
-@{ ///Views/Photos/GetPhotoById.cshtml?photoId=1
-    int photoId = int.Parse(Request["photoId"]);
-    Response.WriteBinary(PhotoModel.GetSmallImage(photoId));
+@{          ///Views/Photos/GetPhotoById.cshtml?photoId=1
+    try
+    {
+        bool isBig = bool.Parse(Request["isBig"]);
+        int photoId = int.Parse(Request["photoId"]);
+        if (isBig)
+        {
+            Response.WriteBinary(PhotoModel.GetOriginalImage(photoId));
+
+        }
+        else
+        {
+        Response.WriteBinary(PhotoModel.GetSmallImage(photoId));
+
+        }
+
+    }
+    catch (Exception)
+    {
+
+    }
 }

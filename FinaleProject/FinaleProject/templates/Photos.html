@@ -16,13 +16,13 @@
 
 
 <div class="container">
-    <div class="photo-container" ng-repeat="photo in photos.photos track by $index">
-        <img src="Views/1.jpg">
+    <div class="photo-container ng-cloak" ng-repeat="photo in photos.photos track by $index">
+        <img class="ng-cloak" src="Views/Photos/GetPhotoById.cshtml?photoId={{photo.Id}}&isBig=false">
         <div class="photo-controls">
             <md-button class="md-icon-button md-accent" aria-label="Favorite">
                 <md-icon md-svg-icon="/styles/icons/favorite.svg"></md-icon>
             </md-button>
-            <md-button class="md-icon-button launch" ng-click="showPhoto($event)">
+            <md-button class="md-icon-button launch" ng-click="showPhoto($event, photo.Id)">
                 <md-icon md-svg-icon="/styles/icons/zoom.svg"></md-icon>
             </md-button>
         </div>
