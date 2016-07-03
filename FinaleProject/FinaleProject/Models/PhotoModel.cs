@@ -63,6 +63,7 @@ namespace FinaleProject.Models
                 AlbumId = ent.AlbumId,
                 AddDate = ent.AddDate,
                 AccountLogin = ent.AccountLogin,
+                LikesContainer = ent.LikesContainer,
             });
         } 
         public static PhotoModel Get(int photoId)

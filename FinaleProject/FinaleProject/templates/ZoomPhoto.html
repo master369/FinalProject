@@ -1,5 +1,5 @@
 ﻿<md-dialog class="ng-cloak modal-container h100">
-    <form class="h100">
+    <div class="h100">
         <md-toolbar>
             <div class="md-toolbar-tools color">
                 <span flex></span>
@@ -13,24 +13,42 @@
                 <div class="image-wrapper">
                     <img class="h100 w100" src="Views/Photos/GetPhotoById.cshtml?photoId={{zoomPhoto.photoId}}&isBig=true">
                 </div>
-                <div ng-controller="CommentsCtrl" class="ng-cloak">
+                <div ng-controller="CommentsCtrl as comments" class="ng-cloak">
                     <md-content class="comments-container " md-theme="altTheme">
                         <section>
-                            <md-list-item class="md-2-line" ng-repeat="message in messages">
+                            <md-list-ite class="md-2-line" ng-repeat="comment in comments.commentsList">
                                 <div class="md-list-item-text">
-                                    <h3>{{message.who}} {{message.when}}</h3>
-                                    <h3>{{message.what}}</h3>
+                                    <div class="remove-button">
+                                        <i class="glyphicon glyphicon-remove"
+                                           ng-click="comments.deleteComment(comment.Id)"></i>
+                                    </div>
+
+                                    <div class="login-title">{{comment.AccountLogin}} </div>
+                                    <!--<div>{{comment.Date | date : 'short'}}</div>-->
+                                    <div>{{comment.Text}}</div>
                                 </div>
-                            </md-list-item>
+                                <hr class="line">
+                            </md-list-ite>
+                            <form novalidate name="commentForm" ng-submit="commentForm.$valid && comments.addComment()">
+                                <md-input-container class="md-input-has-placeholder flex md-default-theme">
+                                    <label>Add comment</label>
+                                    <input ng-model="comments.commentText"
+                                           type="text"
+                                           name="commentText"
+                                           ng-required="true">
+                                </md-input-container>
+                                <md-button class="md-fab md-button md-ink-ripple"
+                                           type="submit">
+                                    <i class="glyphicon glyphicon-send"></i>
+                                    <div class="md-ripple-container"></div>
+                                </md-button>
+                            </form>
+
+
                         </section>
                     </md-content>
                 </div>
             </div>
         </md-dialog-content>
-        <md-dialog-actions layout="row" class="color">
-            <md-button class="md-icon-button md-accent " aria-label="Favorite">
-                <md-icon md-svg-icon="/styles/icons/favorite.svg"></md-icon>
-            </md-button>
-        </md-dialog-actions>
-    </form>
+    </div>
 </md-dialog>

@@ -27,14 +27,9 @@
     }]);
 
 
-    $urlRouterProvider.otherwise("/home");
+    $urlRouterProvider.otherwise("/users");
     $stateProvider
-      .state('home', {
-          url: "/home",
-          templateUrl: "Home.html",
-          controller: "HomeCtrl",
-          controllerAs: "home",
-      })
+
       .state('albums', {
           url: "/albums?username",
           templateUrl: "Albums.html",

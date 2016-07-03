@@ -10,10 +10,12 @@
             myName = $scope.main.user.name;
         }
     });
+
     $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
+
     $scope.showPhoto = function (ev, photoId) {
         var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && $scope.customFullscreen;
-        angular.copy({id: photoId} ,SelectedPhoto)
+        angular.copy({ id: photoId }, SelectedPhoto);
         $mdDialog.show({
             controller: DialogController,
             templateUrl: 'ZoomPhoto.html',
@@ -29,6 +31,7 @@
             $scope.customFullscreen = (wantsFullScreen === true);
         });
     };
+
     vm.deletePhoto = function (photoId) {
         $http.post('Views/Photos/Photos.cshtml', {
             typeOfChange: 'delete',
@@ -100,5 +103,22 @@
             document.querySelectorAll('[type="file"]')[0].value = "";
             vm.photos = data.PhotosList;
         });
+    };
+
+    vm.likePhoto = function (photoId) {
+        $http.post('Views/Photos/LikePhoto.cshtml', {
+            photoId: photoId
+        }).then(function (res) {
+            var data = res.data,
+                photoIndex = _.findIndex(vm.photos, function (photo) {
+                    return photo.Id === photoId;
+                });
+
+            vm.photos[photoIndex].LikesContainer = data.UpdatedPhoto.LikesContainer;
+        });
+    };
+
+    vm.isLiked = function (photo) {
+        return _.includes(photo.LikesContainer, myName);
     };
 });

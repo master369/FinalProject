@@ -1097,7 +1097,8 @@
     <Content Include="scripts\app\oi.file.old.js" />
     <Content Include="scripts\app\services\alert.service.js" />
     <Content Include="scripts\app\services\fileUpload.service.js" />
-    <Content Include="scripts\app\services\photo.value.js" />
+    <Content Include="scripts\app\values\photo.value.js" />
+    <Content Include="scripts\app\values\user.value.js" />
     <Content Include="styles\allStyles.css" />
     <Content Include="templates\Albums.html" />
     <Content Include="templates\Alert.html" />
@@ -1107,17 +1108,12 @@
     <Content Include="templates\Search.html" />
     <Content Include="templates\SignUp.html" />
     <Content Include="templates\ZoomPhoto.html" />
-    <Content Include="Views\1.jpg" />
     <Content Include="Views\Account\SignUp.cshtml" />
     <Content Include="Views\Account\LogIn.cshtml" />
     <Content Include="Views\Account\Logout.cshtml" />
-    <Content Include="Views\Koala.jpg" />
-    <Content Include="Views\Search\Search.cshtml" />
-    <Content Include="Views\Home\Home.cshtml" />
     <Content Include="Views\Album\Albums.cshtml" />
     <Content Include="Views\Photos\Photos.cshtml" />
     <Content Include="Views\Account\Users.cshtml" />
-    <Content Include="scripts\app\controllers\home.ctrl.js" />
     <Content Include="bower_components\lodash\.bower.json" />
     <Content Include="bower_components\lodash\.editorconfig" />
     <Content Include="bower_components\lodash\.github\CONTRIBUTING.md" />
@@ -1248,6 +1244,9 @@
     <Content Include="bower_components\oi.file\LICENSE" />
     <Content Include="bower_components\oi.file\README.md" />
     <Content Include="Views\Photos\GetPhotoById.cshtml" />
+    <Content Include="Views\Comment\GetComments.cshtml" />
+    <Content Include="Views\Comment\Comments.cshtml" />
+    <Content Include="Views\Photos\LikePhoto.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1262,7 +1261,6 @@
     <Content Include="scripts\app\config.js" />
     <Content Include="scripts\app\templates.js" />
     <Content Include="templates\Users.html" />
-    <Content Include="templates\Home.html" />
     <Content Include="templates\templates.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -1275,10 +1273,7 @@
     <Compile Include="Models\PhotoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Comment\" />
-    <Folder Include="Views\Error\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\BLL.Core\BLL.Core.csproj">
       <Project>{4e5e6f5f-5d47-41f6-ab46-49978d0d7875}</Project>

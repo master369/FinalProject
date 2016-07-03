@@ -30,19 +30,19 @@ namespace DAL.DataBase
             {
                 using (var connection = new SqlConnection(_connectionString))
                 {
-                    var commandInsert = new SqlCommand("INSERT INTO dbo.[Comments] ([AccountLogin], [PhotoId], [Date], [Text])" +
-                                                       " VALUES (@AccountLogin, @PhotoId, @Date, @Text) ", connection);
+                    var commandInsert = new SqlCommand("INSERT INTO dbo.[Comments] ([AccountLogin], [Photo_Id], [Date], [Text])" +
+                                                       " VALUES (@AccountLogin, @Photo_Id, @Date, @Text) ", connection);
                     commandInsert.Parameters.AddWithValue("@AccountLogin", ent.AccountLogin);
-                    commandInsert.Parameters.AddWithValue("@PhotoId", ent.PhotoId);
+                    commandInsert.Parameters.AddWithValue("@Photo_Id", ent.PhotoId);
                     commandInsert.Parameters.AddWithValue("@Date", ent.Date);
                     commandInsert.Parameters.AddWithValue("@Text", ent.Text);
                     connection.Open();
                     var result = commandInsert.ExecuteNonQuery();
                 }
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-                logger.Error("Ошибка при добавлении комментария к фотографии в базу данных!");
+                logger.Error("Ошибка при добавлении комментария к фотографии в базу данных!" + exception);
             }
 
 
@@ -77,14 +77,14 @@ namespace DAL.DataBase
             {
                 using (var connection = new SqlConnection(_connectionString))
                 {
-                    var command = new SqlCommand("SELECT [Id], [AccountLogin], [PhotoId], [Date], [Text] FROM dbo.[Comments] WHERE [PhotoId] = @PhotoId", connection);
-                    command.Parameters.AddWithValue("@PhotoId", photoId);
+                    var command = new SqlCommand("SELECT [Id], [AccountLogin], [Photo_Id], [Date], [Text] FROM dbo.[Comments] WHERE [Photo_Id] = @Photo_Id", connection);
+                    command.Parameters.AddWithValue("@Photo_Id", photoId);
                     connection.Open();
                     var reader = command.ExecuteReader();
 
                     while (reader.Read())
                     {
-                        comments.Add(new Comment((int)reader["Id"], (string)reader["AccountLogin"], (int)reader["PhotoId"],
+                        comments.Add(new Comment((int)reader["Id"], (string)reader["AccountLogin"], (int)reader["Photo_Id"],
                                                  (DateTime)reader["Date"], (string)reader["Text"]));
                     }
                 }

@@ -16,8 +16,6 @@
 <div class="container" >
     <div class="album-item" ng-repeat="album in albums.albums track by $index">
         <i class="glyphicon glyphicon-remove album-delete" ng-click="albums.removeAlbum(album.Id)"></i>
-        <img src=""
-             class="img-rounded">
         <span class="album-title" ui-sref="photos({username:albums.username, albumId:album.Id})">{{album.Title}}</span>
     </div>
 </div>

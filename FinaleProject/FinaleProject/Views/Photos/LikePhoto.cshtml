@@ -1,0 +1,8 @@
+﻿@using FinaleProject.Models;
+@if (IsPost)
+{
+    int photoId = int.Parse(Request["photoId"]);
+    PhotoModel.LikePhoto(photoId, User.Identity.Name);
+    var data = new {UpdatedPhoto = PhotoModel.Get(photoId) };
+    Response.Write(Json.Encode(data));
+}

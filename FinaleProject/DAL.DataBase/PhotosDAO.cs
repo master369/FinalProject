@@ -201,7 +201,7 @@ namespace DAL.DataBase
             {
                 using (var connection = new SqlConnection(_connectionString))
                 {
-                    var command = new SqlCommand("SELECT [PhotoId], [Login] FROM dbo.[Likes] WHERE [PhotoId] = @Id And [Login] = @Login", connection);
+                    var command = new SqlCommand("SELECT [Photo_Id], [Login] FROM dbo.[Likes] WHERE [Photo_Id] = @Id And [Login] = @Login", connection);
                     command.Parameters.AddWithValue("@Id", photoId);
                     command.Parameters.AddWithValue("@Login", login);
                     connection.Open();
@@ -213,7 +213,7 @@ namespace DAL.DataBase
                         connection.Close();
                         connection.Open();
 
-                        command = new SqlCommand("INSERT INTO dbo.[Likes] ([PhotoId], [Login]) VALUES  (@PhotoId, @Login)", connection);
+                        command = new SqlCommand("INSERT INTO dbo.[Likes] ([Photo_Id], [Login]) VALUES  (@PhotoId, @Login)", connection);
 
                         command.Parameters.AddWithValue("@PhotoId", photoId);
                         command.Parameters.AddWithValue("@Login", login);
@@ -225,7 +225,7 @@ namespace DAL.DataBase
                     connection.Close();
                     connection.Open();
 
-                    command = new SqlCommand("DELETE FROM dbo.[Likes] WHERE [PhotoId] = @PhotoId And [Login] = @Login", connection);
+                    command = new SqlCommand("DELETE FROM dbo.[Likes] WHERE [Photo_Id] = @PhotoId And [Login] = @Login", connection);
 
                     command.Parameters.AddWithValue("@PhotoId", photoId);
                     command.Parameters.AddWithValue("@Login", login);
@@ -250,7 +250,7 @@ namespace DAL.DataBase
             {
                 using (var connection = new SqlConnection(_connectionString))
                 {
-                    var command = new SqlCommand("SELECT [PhotoId], [Login] FROM dbo.[Likes] WHERE [PhotoId] = @Id", connection);
+                    var command = new SqlCommand("SELECT [Photo_Id], [Login] FROM dbo.[Likes] WHERE [Photo_Id] = @Id", connection);
                     command.Parameters.AddWithValue("@Id", id);
                     connection.Open();
                     var reader = command.ExecuteReader();

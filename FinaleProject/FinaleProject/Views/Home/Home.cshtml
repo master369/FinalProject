@@ -1,6 +1,0 @@
-﻿@if (IsPost)
-{
-    var Login = Request["Login"];
-    FormsAuthentication.SetAuthCookie(Login, createPersistentCookie: true);
-    Response.Write(HttpStatusCode.OK);
-}

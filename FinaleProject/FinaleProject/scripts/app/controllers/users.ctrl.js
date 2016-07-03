@@ -29,6 +29,7 @@
 
                vm.userList = data.items;
                vm.totalCount = data.totalCount;
+
            }, function (res) {
                console.dir(arguments);
            });
@@ -67,7 +68,6 @@
           });
 
     };
-
     vm.updatePageSize = function () {
         $state.go('.', { pageSize: vm.pageSize }, { notify: false });
     };

@@ -1,0 +1,58 @@
+﻿@using FinaleProject.Models;
+@if (IsPost)
+{
+    Action badRequest = () =>
+    {
+        Response.Write("You have no power here!");
+        Response.SetStatus(HttpStatusCode.BadRequest);
+    };
+    Action<int> delete = (commentId) =>
+    {
+        CommentModel.DeleteComment(commentId);
+        Response.Write(HttpStatusCode.OK);
+    };
+    var myUsername = User.Identity.Name;
+    var typeOfChange = Request["typeOfChange"];
+    var username = Request["username"];
+    if (User.Identity.IsAuthenticated)
+    {
+
+        switch (typeOfChange)
+        {
+            case "get":
+
+                int photoId = int.Parse(Request["photoId"]);
+                Response.WriteBinary(PhotoModel.GetSmallImage(photoId));
+
+                break;
+            case "getAll":
+                photoId = int.Parse(Request["photoId"]);
+                var comments = CommentModel.GetCommentsByPhoto(photoId).ToArray();
+                var data = new { CommentsList = CommentModel.GetCommentsByPhoto(photoId) };
+                Response.Write(Json.Encode(data));
+                break;
+            case "post":
+                photoId = int.Parse(Request["photoId"]);
+                var text = Request["text"];
+                CommentModel.AddComment(myUsername, photoId, text);
+                data = new { CommentsList = CommentModel.GetCommentsByPhoto(photoId) };
+                Response.Write(Json.Encode(data));
+                break;
+            case "delete":
+                var commentId = int.Parse(Request["commentId"]);
+                if (myUsername != username || !User.IsInRole("Moderator") || !User.IsInRole("Admin"))
+                {
+                    badRequest();
+                }
+                delete(commentId);
+
+                break;
+            default:
+                break;
+        }
+    }
+    else
+    {
+        badRequest();
+    }
+}

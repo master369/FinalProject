@@ -20,7 +20,7 @@
                 AlbumModel.GetAlbum(albumid);
                 break;
             case "getAll":
-                var data = new { Name = username, AlbumList = AlbumModel.GetByAccount(username) };
+                var data = new { Name = username, AlbumList = AlbumModel.GetByAccount(username)};
                 Response.Write(Json.Encode(data));
                 break;
             case "post":

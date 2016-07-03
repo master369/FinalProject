@@ -19,10 +19,18 @@
 
 <div class="container">
     <div class="photo-container ng-cloak" ng-repeat="photo in photos.photos track by $index">
-        <i class="glyphicon glyphicon-remove delete-photo" ng-click="photos.deletePhoto(photo.Id)"></i>
-        <img class="ng-cloak" src="Views/Photos/GetPhotoById.cshtml?photoId={{photo.Id}}&isBig=false">
+        <div class="photo-blackout"></div>
+        <i class="glyphicon glyphicon-remove delete-photo" 
+           ng-click="photos.deletePhoto(photo.Id)"
+           ng-if="main.user.isAuthorized"></i>
+        <img class="ng-cloak image" src="Views/Photos/GetPhotoById.cshtml?photoId={{photo.Id}}&isBig=false">
         <div class="photo-controls">
-            <md-button class="md-icon-button md-accent" aria-label="Favorite">
+            <md-button class="md-icon-button md-accent like-button" 
+                       aria-label="Favorite" 
+                       ng-click="photos.likePhoto(photo.Id)"
+                       ng-if="main.user.isAuthorized"
+                       ng-class="{'like-active': photos.isLiked(photo)}">
+                <span class="like-count">{{photo.LikesContainer.length}}</span>
                 <md-icon md-svg-icon="/styles/icons/favorite.svg"></md-icon>
             </md-button>
             <md-button class="md-icon-button launch" ng-click="showPhoto($event, photo.Id)">

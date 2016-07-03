@@ -25,7 +25,6 @@ namespace FinaleProject.Models
             {
                 Title = ent.Title,
                 Id = ent.Id,
-                //Photos = Logic.photosLogic.GetPhotosByAlbum(ent.Id).ToList(),
             });
         }
 
