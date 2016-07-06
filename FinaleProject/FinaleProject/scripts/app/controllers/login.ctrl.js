@@ -21,7 +21,7 @@
                     name: data.Name,
                     roles: data.Roles
                 }, $scope.main.user);
-                $state.go('home');
+                $state.go('users');
             }, function (res) {
                 console.dir(arguments);
                 var data = res.data;

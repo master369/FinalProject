@@ -23,7 +23,7 @@
                     name: data.Name,
                     roles: data.Roles
                 }, $scope.main.user);
-                $state.go('home');
+                $state.go('users');
             }, function (res) {
                 var data = res.data;
                 user.password = '';
