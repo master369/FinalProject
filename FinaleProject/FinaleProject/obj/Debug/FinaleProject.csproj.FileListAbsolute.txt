@@ -1,0 +1,102 @@
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\ApplicationInsights.config
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\roslyn\csc.exe
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\roslyn\vbc.exe
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\roslyn\VBCSCompiler.exe
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\FinaleProject.dll.config
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\FinaleProject.dll
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\FinaleProject.pdb
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\Microsoft.AI.Web.dll
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\System.Web.Helpers.dll
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\System.Web.Razor.dll
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\System.Web.WebPages.dll
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\System.Web.WebPages.Razor.dll
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\Microsoft.AI.Web.xml
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\System.Web.Helpers.xml
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\System.Web.Razor.xml
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\System.Web.WebPages.xml
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\bin\System.Web.WebPages.Razor.xml
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\obj\Debug\FinaleProject.csprojResolveAssemblyReference.cache
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\obj\Debug\FinaleProject.dll
+C:\Users\Master\Documents\Visual Studio 2015\Projects\FinaleProject\FinaleProject\obj\Debug\FinaleProject.pdb
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\ApplicationInsights.config
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\roslyn\csc.exe
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\roslyn\vbc.exe
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\roslyn\VBCSCompiler.exe
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\FinaleProject.dll.config
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\FinaleProject.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\FinaleProject.pdb
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\Microsoft.AI.Web.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\System.Web.Helpers.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\System.Web.Razor.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\System.Web.WebPages.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\System.Web.WebPages.Razor.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\Microsoft.AI.Web.xml
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\System.Web.Helpers.xml
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\System.Web.Razor.xml
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\System.Web.WebPages.xml
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\System.Web.WebPages.Razor.xml
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\obj\Debug\FinaleProject.csprojResolveAssemblyReference.cache
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\obj\Debug\FinaleProject.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\obj\Debug\FinaleProject.pdb
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\BLL.Core.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\BLL.Interfaces.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\Common.Entities.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\DAL.Interfaces.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\DAL.DataBase.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\log4net.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\BLL.Core.pdb
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\BLL.Interfaces.pdb
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\Common.Entities.pdb
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\DAL.Interfaces.pdb
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\DAL.DataBase.pdb
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\log4net.xml
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\PagedList.dll
+C:\Users\Master\Documents\FinalProject\FinaleProject\FinaleProject\bin\PagedList.xml
