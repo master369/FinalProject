@@ -16,7 +16,7 @@
                 <div ng-controller="CommentsCtrl as comments" class="ng-cloak">
                     <md-content class="comments-container " md-theme="altTheme">
                         <section>
-                            <md-list-ite class="md-2-line" ng-repeat="comment in comments.commentsList">
+                            <md-list-ite class="md-2-line" ng-repeat="comment in comments.commentsList track by $index">
                                 <div class="md-list-item-text">
                                     <div class="remove-button">
                                         <i class="glyphicon glyphicon-remove"
